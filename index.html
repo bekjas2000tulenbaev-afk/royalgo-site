@@ -1,6 +1,28 @@
 <!doctype html>
-<html lang="uz" class="js">
+<html lang="ru" class="js">
 <head>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PHCLC3XB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<script>
+/* language: ?lang= beats saved choice; default Russian. Hide body until a non-Russian language is applied, so the Russian HTML never flashes. */
+(function(){
+  var q='',saved=null;
+  try{q=(new URLSearchParams(location.search).get('lang')||'').toLowerCase()}catch(e){}
+  if(q==='uz-cyrl'||q==='cyr'||q==='oz')q='kr';
+  if(!/^(ru|uz|kr)$/.test(q))q='';
+  try{saved=localStorage.getItem('rg-lang-choice')}catch(e){}
+  if(!/^(ru|uz|kr)$/.test(saved||''))saved=null;
+  var l=q||saved||'ru';
+  window.__rgLang=l; window.__rgAsk=!q&&!saved;
+  try{var u=new URLSearchParams(location.search).get('utm_source');if(u)sessionStorage.setItem('rg-src',u)}catch(e){}
+  if(l!=='ru'){var h=document.documentElement;h.lang=l==='kr'?'uz-Cyrl':'uz';h.classList.add('i18n-wait');setTimeout(function(){h.classList.remove('i18n-wait')},2500)}
+})();
+</script>
+<style>html.i18n-wait body{visibility:hidden}</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#070708">
@@ -8,8 +30,8 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<title>Royal GO</title>
-<meta name="description" content="Royal GO — WB Taxi’ning O‘zbekistondagi birinchi rasmiy hamkorlaridan biri. Haydovchilarni WB Taxi'ga ulaymiz.">
+<title>Royal GO — работа водителем в WB Taxi в Ташкенте</title>
+<meta name="description" content="Royal GO — один из первых официальных партнёров WB Taxi в Узбекистане. Подключим к WB Taxi быстро: бонус 50 000 сум за подключение, призы акции «Барака», быстрые выплаты и техподдержка. Офис в Ташкенте.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1282,6 +1304,367 @@ h1 .hl-glass{padding:.06em .34em .16em!important;border-radius:.6em!important}
 .mapcta .pin{flex:none!important;aspect-ratio:1/1}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 h1 .l{max-width:100%}
+
+/* ===== v41 bring-a-friend tile ===== */
+.t-ref{grid-column:1/-1!important;display:grid!important;grid-template-columns:1.1fr 1fr;gap:22px;align-items:center;padding:26px 28px!important;min-height:0!important;
+  background:radial-gradient(120% 140% at 0% 0%,rgba(232,54,196,.30),rgba(232,54,196,0) 55%),radial-gradient(120% 140% at 100% 100%,rgba(124,45,226,.32),rgba(124,45,226,0) 55%),#0E0A17!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 3px 10px -4px rgba(255,255,255,.25)!important}
+.t-ref .lab{display:inline-block}
+.t-ref h3{margin-top:10px;font-size:clamp(24px,2.6vw,34px);line-height:1.08;letter-spacing:-.025em;font-weight:600}
+.t-ref p{margin-top:10px;color:var(--mut);font-size:15px;line-height:1.45;max-width:440px}
+.rf-go{margin-top:18px;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;color:#fff;font-weight:600;font-size:15px;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.26),rgba(255,255,255,0) 60%),linear-gradient(100deg,rgba(200,40,240,.92),rgba(110,48,255,.94));
+  box-shadow:inset 0 3px 8px -2px rgba(255,255,255,.45),inset 0 -4px 10px -3px rgba(255,200,255,.3),0 12px 26px -12px rgba(120,40,230,.7);transition:transform .2s}
+.rf-go svg{width:15px;height:15px}
+.rf-go:active{transform:scale(.96)}
+.rf-r{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rf-c{border-radius:20px;padding:18px 16px;display:flex;flex-direction:column;gap:6px;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.12),rgba(255,255,255,.03) 60%,rgba(255,255,255,.06));
+  -webkit-backdrop-filter:blur(12px) saturate(140%);backdrop-filter:blur(12px) saturate(140%);
+  box-shadow:inset 0 3px 8px -2px rgba(255,255,255,.3),inset 0 -4px 10px -3px rgba(255,255,255,.12),0 14px 28px -16px rgba(0,0,0,.6)}
+.rf-c:first-child{background:radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.22),rgba(255,255,255,0) 60%),linear-gradient(140deg,rgba(232,54,196,.55),rgba(124,45,226,.55))}
+.rf-who{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.rf-c b{font-size:clamp(26px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.rf-c b small{font-size:.45em;font-weight:600;opacity:.8;margin-left:2px}
+.rf-t{font-size:13.5px;line-height:1.35;color:rgba(255,255,255,.85)}
+@media (max-width:820px){
+  .t-ref{grid-template-columns:1fr;gap:14px;padding:18px 16px!important;border-radius:18px}
+  .t-ref h3{font-size:24px}
+  .t-ref p{font-size:14px}
+  .rf-r{gap:10px}
+  .rf-c{padding:14px 12px;border-radius:16px}
+  .rf-c b{font-size:24px}
+  .rf-t{font-size:12.5px}
+  .rf-go{order:3;width:100%;justify-content:center}
+  .rf-l{display:contents}
+}
+
+/* ===== v42 friend promo in the gift slot ===== */
+.t-fr{cursor:pointer}
+@media (max-width:380px){.t-fr a{display:none!important}.t-fr h3{font-size:13px!important}}
+.t-fr{padding-top:32px!important;justify-content:flex-start!important}
+.t-fr .frbig{margin-top:auto;font-size:clamp(56px,6.4vw,104px);font-weight:600;letter-spacing:-.05em;line-height:.9;white-space:nowrap}
+.t-fr .frbig small{font-size:.32em;font-weight:500;margin-left:8px;letter-spacing:-.01em;opacity:.9}
+.t-fr h3{margin-top:10px!important;font-size:clamp(22px,2vw,30px)!important;font-weight:500}
+@media (max-width:820px){
+  .t-fr{padding-top:16px!important;justify-content:flex-end!important}
+  .t-fr .lab{display:block!important;font-size:10px!important;max-width:none!important}
+  .t-fr .frbig{font-size:clamp(28px,8.6vw,42px)}
+  .t-fr .frbig small{display:block;font-size:.42em;margin:2px 0 0}
+  .t-fr h3{font-size:14px!important;margin-top:4px!important}
+}
+
+@media (max-width:820px){
+  .t-fr .lab{text-transform:none!important;letter-spacing:0!important;font-size:12px!important;line-height:1.25!important;font-weight:600;color:#fff!important}
+  .t-fr a{display:none!important}
+  .t-fr .frbig{margin-top:auto}
+}
+@media (max-width:380px){.t-fr .lab{font-size:10px!important}.t-fr .frbig{font-size:26px!important}.t-fr h3{display:none!important}}
+
+/* ===== v43 JUMA hayriyasi tile ===== */
+.t-juma{grid-column:1/-1!important;display:flex!important;align-items:center;justify-content:space-between;gap:24px;padding:24px 28px!important;min-height:0!important;
+  background:radial-gradient(120% 160% at 100% 0%,rgba(232,54,196,.28),rgba(232,54,196,0) 55%),radial-gradient(120% 160% at 0% 100%,rgba(124,45,226,.26),rgba(124,45,226,0) 55%),#0E0A17!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 3px 10px -4px rgba(255,255,255,.22)!important}
+.t-juma h3{margin-top:8px;font-size:clamp(26px,2.8vw,40px);line-height:1.1;letter-spacing:-.025em;font-weight:600}
+.t-juma p{margin-top:8px;color:var(--mut);font-size:15px;line-height:1.45;max-width:46ch}
+.jm-r{flex:none;display:flex;flex-direction:column;align-items:flex-end;padding:16px 22px;border-radius:20px;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.22),rgba(255,255,255,0) 60%),linear-gradient(140deg,rgba(232,54,196,.55),rgba(124,45,226,.55));
+  box-shadow:inset 0 3px 8px -2px rgba(255,255,255,.35),inset 0 -4px 10px -3px rgba(255,255,255,.14),0 14px 28px -16px rgba(0,0,0,.6)}
+.jm-x{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);white-space:nowrap}
+.jm-r small{white-space:nowrap}
+.jm-r b{font-size:clamp(34px,3.6vw,52px);font-weight:700;letter-spacing:-.04em;line-height:1;white-space:nowrap}
+.jm-r small{font-size:13px;color:rgba(255,255,255,.85);margin-top:2px}
+@media (max-width:820px){
+  .t-juma{flex-direction:column;align-items:stretch;gap:12px;padding:16px!important;border-radius:18px}
+  .t-juma h3{font-size:24px}
+  .t-juma p{font-size:13.5px}
+  .jm-r{flex-direction:row;align-items:baseline;justify-content:flex-start;gap:8px;padding:12px 14px;border-radius:14px}
+  .jm-r b{font-size:30px}
+}
+@media (max-width:380px){.jm-r{flex-wrap:wrap;gap:2px 8px}.jm-r b{font-size:26px}}
+
+/* ===== v45 Baraka stage: tight fanned pair ===== */
+.gstage{height:clamp(460px,42vw,580px)!important}
+.gstage::after{content:"";position:absolute;left:50%;bottom:8%;width:70%;height:40px;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(closest-side,rgba(30,0,70,.45),rgba(30,0,70,0));filter:blur(10px);pointer-events:none}
+.gstage .pc{transform-origin:50% 60%}
+.pc.money{--w:min(54%,340px)!important;--x:-94%!important;--y:-84%!important;--r:-9deg!important;z-index:1;
+  box-shadow:0 40px 70px -30px rgba(40,0,80,.65),inset 0 1px 0 rgba(255,255,255,.55)!important}
+.pc.fuel{--w:min(60%,380px)!important;--x:-22%!important;--y:-18%!important;--r:4deg!important;z-index:2;
+  box-shadow:0 50px 80px -30px rgba(30,0,70,.7),0 0 0 1px rgba(255,255,255,.12)!important}
+.gstage.rv .pc{transform:translate(-50%,-50%) rotate(0) scale(.92)!important;opacity:0}
+.gstage.rv.on .pc{transform:translate(var(--x),var(--y)) rotate(var(--r))!important;opacity:1}
+.gstage .pc{left:50%!important;top:50%!important;transition:transform 1s cubic-bezier(.16,1,.3,1),opacity .7s ease!important}
+.gstage.rv.on .pc.fuel{transition-delay:.12s!important}
+.gstage .pc:hover{z-index:5}
+.lochint{bottom:0!important}
+@media (max-width:820px){
+  .gstage{height:clamp(250px,72vw,330px)!important;margin-bottom:20px}
+  .gstage::after{bottom:10%;height:26px}
+  .fan{position:absolute!important;inset:0!important;display:block!important;animation:none!important}
+  .gstage .pc,.gstage.rv .pc,.gstage.rv.on .pc{position:absolute!important;grid-column:auto!important;justify-self:auto!important;min-height:0!important;animation:none!important}
+  .gstage .pc.money{width:min(54%,220px)!important;--x:-88%;--y:-88%;--r:-9deg;padding:14px!important;border-radius:16px}
+  .gstage .pc.fuel{width:min(58%,240px)!important;--x:-20%;--y:-16%;--r:4deg;border-radius:14px}
+  .gstage.rv .pc{transform:translate(-50%,-50%) scale(.92)!important;opacity:0}
+  .gstage.rv.on .pc{transform:translate(var(--x),var(--y)) rotate(var(--r))!important;opacity:1}
+  .lochint{position:absolute!important;left:0;right:0;bottom:-8px!important;margin:0!important}
+}
+
+/* ===== v46 (kept): money popup list ===== */
+.mlist{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px}
+.mlist li{display:flex;gap:12px;align-items:baseline;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.1)}
+.mlist b{min-width:96px;white-space:nowrap}
+/* ===== v48 Baraka: static 3D render ===== */
+.gstage{height:auto!important;aspect-ratio:1200/1250;max-height:720px}
+.gstage.rv,.gstage.rv.on{opacity:1!important;transform:none!important}
+.r3d{position:absolute;inset:0}
+.r3{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}
+.r3hot{position:absolute;border:0;padding:0;margin:0;background:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;cursor:pointer;border-radius:18px;-webkit-tap-highlight-color:transparent;font-size:0;color:transparent}
+.r3hot::before,.r3hot::after{display:none!important}
+.r3hot:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.hot-fuel{left:12%;top:13.4%;width:30%;height:58%}
+.hot-money{left:50%;top:27%;width:33%;height:55%}
+#baraka{overflow-x:clip}
+.r3-cans{transform-origin:26.9% 42.6%}
+.r3-vouch{transform-origin:66.3% 54.5%}
+.gstage.rv:not(.on) .r3-cans,.gstage.rv:not(.on) .r3-vouch{opacity:0}
+.gstage.rv.on .r3-cans{animation:r3inL 1.35s cubic-bezier(.22,.9,.24,1) .15s both}
+.gstage.rv.on .r3-vouch{animation:r3inR 1.35s cubic-bezier(.22,.9,.24,1) .3s both}
+@keyframes r3inL{0%{opacity:0;transform:translateX(-34%) rotate(-18deg)}55%{opacity:1;transform:translateX(1.5%) rotate(4deg)}78%{transform:translateX(-.4%) rotate(-1.2deg)}100%{opacity:1;transform:none}}
+@keyframes r3inR{0%{opacity:0;transform:translateX(34%) rotate(18deg)}55%{opacity:1;transform:translateX(-1.5%) rotate(-4deg)}78%{transform:translateX(.4%) rotate(1.2deg)}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.gstage.rv .r3-cans,.gstage.rv .r3-vouch{animation:none!important;opacity:1!important}}
+@media (max-width:820px){.gstage{max-height:none;margin-bottom:34px}}
+
+/* ===== v50 Baraka: centered floating scene + captions ===== */
+#baraka.bk{background:radial-gradient(55% 45% at 12% 8%,rgba(124,58,237,.55),transparent 70%),radial-gradient(45% 40% at 92% 92%,rgba(192,38,211,.32),transparent 72%),radial-gradient(40% 35% at 55% 55%,rgba(91,34,240,.22),transparent 70%),#0C0720}
+#baraka.bk::before{background:radial-gradient(30% 30% at 60% 45%,rgba(167,110,255,.16),transparent 70%)}
+#baraka .wrap{display:block!important}
+#baraka .txt{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:56px;align-items:end;max-width:none}
+#baraka .txt>.lab,#baraka .txt>h2,#baraka .txt>.bl{grid-column:1}
+#baraka .txt>h2{font-size:clamp(64px,8vw,128px)!important;line-height:.95}
+#baraka .txt>.bl{font-size:clamp(18px,1.6vw,22px);max-width:30ch}
+#baraka .bitems{grid-column:2;grid-row:1/span 3;align-self:end;margin:0}
+#baraka .gstage{position:relative;width:100%;max-width:1320px;margin:20px auto 0!important;aspect-ratio:1.698!important;max-height:none!important;height:auto!important}
+#baraka .r3d{left:12%;right:12%;top:0;bottom:0}
+#baraka .lochint{display:none!important}
+#baraka .gstage{aspect-ratio:auto!important}
+#baraka .r3d{position:relative;inset:auto;left:auto;right:auto;width:94%;margin:0 auto;aspect-ratio:1600/1240}
+.r3-cans>img,.r3-vouch>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.holo{position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay;opacity:.85;
+  background:linear-gradient(112deg,transparent 30%,rgba(255,255,255,.0) 38%,rgba(255,140,230,.55) 44%,rgba(140,230,255,.6) 50%,rgba(255,250,170,.55) 56%,rgba(255,255,255,0) 62%,transparent 70%);
+  background-size:300% 100%;background-repeat:no-repeat;animation:holo 5.5s cubic-bezier(.45,0,.25,1) infinite;
+  -webkit-mask:center/100% 100% no-repeat;mask:center/100% 100% no-repeat}
+.hl-c{-webkit-mask-image:url(img/bk2-certs.webp);mask-image:url(img/bk2-certs.webp);animation-delay:1.8s}
+.hl-v{-webkit-mask-image:url(img/bk2-vouch.webp);mask-image:url(img/bk2-vouch.webp);animation-delay:2.4s}
+@keyframes holo{0%{background-position:110% 0}55%,100%{background-position:-10% 0}}
+.bbtns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:18px;position:relative;z-index:3}
+.bbtn{display:flex;align-items:center;gap:18px;min-height:64px;padding:12px 18px 12px 22px;border-radius:20px;cursor:pointer;color:#fff;text-align:left;font:inherit;
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 30px rgba(10,4,30,.35);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  transition:transform .15s ease,background .2s ease}
+.bbtn:hover{background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.07))}
+.bbtn:active{transform:scale(.97)}
+.bbtn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.bb-t{display:flex;flex-direction:column;gap:2px}
+.bb-t b{font-size:18px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.bb-t small{font-size:13px;color:rgba(255,255,255,.68)}
+.bb-a{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#2A0E5C;font-weight:700;flex:none}
+@media (prefers-reduced-motion:reduce){.holo{animation:none;opacity:0}}
+@media (max-width:820px){
+  #baraka .txt{display:block}
+  #baraka .txt>h2{font-size:clamp(56px,17vw,88px)!important}
+  #baraka .bitems{margin-top:22px}
+  #baraka .gstage{width:calc(100% + 32px);margin:18px -16px 0!important;padding-top:0;aspect-ratio:auto!important}
+  .bbtns{flex-direction:column;align-items:stretch;padding:0 16px;margin-top:6px;gap:10px}
+  .bbtn{justify-content:space-between}
+  #baraka .r3d{position:relative;inset:auto;aspect-ratio:1600/1240;width:124%;margin-left:-12%}
+  #baraka .r3d{left:auto;right:auto}
+  #baraka .lochint{display:none!important}
+}
+
+/* ===== v51 Baraka: living scene (phone + grid + 4 cards) ===== */
+.r3k>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.k-c40 .holo{-webkit-mask-image:url(img/bk3-c40.webp);mask-image:url(img/bk3-c40.webp);animation-delay:1.6s}
+.k-c25 .holo{-webkit-mask-image:url(img/bk3-c25.webp);mask-image:url(img/bk3-c25.webp);animation-delay:2.3s}
+.k-v1 .holo{-webkit-mask-image:url(img/bk4-v1.webp);mask-image:url(img/bk4-v1.webp);animation-delay:3s}
+.k-v2 .holo{-webkit-mask-image:url(img/bk4-v2.webp);mask-image:url(img/bk4-v2.webp);animation-delay:3.7s}
+.k-c40{transform-origin:28.7% 28.8%}.k-c25{transform-origin:24.9% 55.2%}.k-v1{transform-origin:71.7% 41.7%}.k-v2{transform-origin:67.5% 68.3%}
+.r3-base,.r3-grid{transform-origin:50% 50%}
+.h-c40{left:15.8%;top:14.3%;width:25.9%;height:29.0%}.h-c25{left:12.2%;top:39.7%;width:25.4%;height:31.1%}.h-v1{left:56.9%;top:26.9%;width:29.7%;height:29.6%}.h-v2{left:52.9%;top:52.6%;width:29.1%;height:31.5%}
+.gstage.rv:not(.on) .r3k{opacity:0}
+.gstage.rv:not(.on) .r3-grid{opacity:0}
+.gstage.rv.on .k-c40{animation:r3inL 1.3s cubic-bezier(.22,.9,.24,1) .15s both,fA 6.2s ease-in-out 1.5s infinite}
+.gstage.rv.on .k-c25{animation:r3inL 1.3s cubic-bezier(.22,.9,.24,1) .3s both,fB 7s ease-in-out 1.7s infinite}
+.gstage.rv.on .k-v1{animation:r3inR 1.3s cubic-bezier(.22,.9,.24,1) .25s both,fB 6.6s ease-in-out 1.6s infinite}
+.gstage.rv.on .k-v2{animation:r3inR 1.3s cubic-bezier(.22,.9,.24,1) .4s both,fA 7.4s ease-in-out 1.8s infinite}
+.gstage.rv.on .r3-base{animation:fP 8s ease-in-out infinite}
+.gstage.rv.on .r3-grid{animation:gIn 1s ease .6s both,fG 8s ease-in-out infinite}
+@keyframes fA{0%,100%{translate:0 0;rotate:0deg}50%{translate:.5% -1.8%;rotate:-1.4deg}}
+@keyframes fB{0%,100%{translate:0 0;rotate:0deg}50%{translate:-.5% -1.5%;rotate:1.2deg}}
+@keyframes fP{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -1.2%;rotate:-.8deg}}
+@keyframes fG{0%,100%{translate:0 0}50%{translate:.4% -.6%}}
+@keyframes gIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.gstage.rv .r3k,.gstage.rv .r3-base,.gstage.rv .r3-grid{animation:none!important;opacity:1!important}}
+
+/* ===== v52: Baraka text tidy, glow, compact button; compact JUMA ===== */
+#baraka .txt{display:block!important}
+#baraka .bitems{display:block;border:0!important;padding:0!important;margin:14px 0 0!important;max-width:560px}
+#baraka .bitems span{margin:0;font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:rgba(255,255,255,.8)}
+#baraka .r3d::before{content:"";position:absolute;left:22%;right:22%;top:8%;bottom:8%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(130,60,240,.75),rgba(91,33,182,.38) 55%,transparent 100%);filter:blur(36px);pointer-events:none}
+.bbtn{min-height:0;padding:9px 10px 9px 18px;border-radius:16px;gap:14px}
+.bb-t b{font-size:16px}.bb-t small{font-size:12px}
+.bb-a{width:32px;height:32px}
+@media (max-width:820px){
+  .t-juma{gap:10px!important;padding:14px 16px!important}
+  .t-juma h3{font-size:20px!important;margin-top:6px}
+  .t-juma p{display:none}
+  .jm-r{padding:8px 14px!important}
+  .jm-r b{font-size:30px!important}
+  .bbtn{padding:7px 8px 7px 18px;min-height:52px!important}
+  .bbtn .bb-t small{display:none}
+  .bb-t b{font-size:16px}
+}
+
+/* ===== v53: desktop bonus tiles, bigger prizes button, mobile gap ===== */
+@media (min-width:821px){
+  .t-bonus,.t-fr{min-height:0!important;height:auto!important;padding:34px 40px!important}
+  .t-bonus .big{font-size:clamp(64px,6vw,96px)!important;margin-top:auto}
+  .t-fr .frbig{font-size:clamp(52px,4.6vw,76px)!important;margin-top:28px}
+  .t-fr h3{font-size:clamp(20px,1.6vw,24px)!important}
+  .bbtn{min-height:68px;padding:12px 14px 12px 28px;border-radius:20px;gap:22px}
+  .bb-t b{font-size:21px}.bb-t small{font-size:14px}
+  .bb-a{width:44px;height:44px;font-size:18px}
+}
+@media (max-width:820px){#shartlar{padding-bottom:40px!important}}
+
+/* ===== v54: bigger Baraka scene, text higher ===== */
+#baraka{padding-top:clamp(40px,5vw,72px)!important}
+@media (min-width:821px){
+  #baraka .gstage{max-width:1560px!important;margin:-4% auto -3%!important}
+  #baraka .r3d{width:112%!important;margin-left:-6%!important}
+  #baraka .bbtns{margin-top:0}
+}
+@media (max-width:820px){
+  #baraka .gstage{margin-top:-2%!important}
+  #baraka .r3d{width:134%!important;margin-left:-17%!important}
+}
+
+.vbal{margin:14px 0 6px;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(180,154,104,.28),rgba(255,255,255,.06));border:1px solid rgba(233,196,106,.35)}
+.vbal b{display:block;font-size:18px;font-weight:700}
+.vbal span{display:block;margin-top:6px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.82)}
+.vmore{margin-top:14px;width:100%;min-height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);color:#fff;font:inherit;font-weight:600;font-size:15px;cursor:pointer}
+.vmore:hover{background:rgba(255,255,255,.16)}
+
+/* ===== v55: info panes, synced card motion, phone rows ===== */
+.t-sm[data-loc]{cursor:pointer;transition:transform .15s ease,border-color .2s}
+.t-sm[data-loc]:active{transform:scale(.98)}
+.t-sm[data-loc]:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.t-sm[data-loc]::after{content:"→";position:absolute;right:12px;top:12px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;background:rgba(255,255,255,.1);color:#fff}
+.t-sm[data-loc]{position:relative}
+.ilist{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.ilist li{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.08);font-size:15px;line-height:1.4}
+.ilist.num{counter-reset:n}.ilist.num li{counter-increment:n;display:flex;gap:12px;align-items:center}
+.ilist.num li::before{content:counter(n);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#2A0E5C;font-weight:700;font-size:14px}
+.sup-btns{display:grid;gap:10px;margin-top:14px}
+.sup-b{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;padding:12px 16px;border-radius:14px;background:#fff;color:#2A0E5C;text-decoration:none;font-weight:600}
+.sup-b b{font-size:17px;white-space:nowrap}
+.sup-b.tg{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2)}
+
+/* ===== v56: synced lively motion + rows appearing in phone ===== */
+.gstage.rv.on .k-c40{animation:r3inL 1.2s cubic-bezier(.22,.9,.24,1) .1s both,fS 4.6s ease-in-out 1.4s infinite}
+.gstage.rv.on .k-c25{animation:r3inL 1.2s cubic-bezier(.22,.9,.24,1) .1s both,fS 4.6s ease-in-out 1.4s infinite}
+.gstage.rv.on .k-v1{animation:r3inR 1.2s cubic-bezier(.22,.9,.24,1) .1s both,fS 4.6s ease-in-out 1.4s infinite}
+.gstage.rv.on .k-v2{animation:r3inR 1.2s cubic-bezier(.22,.9,.24,1) .1s both,fS 4.6s ease-in-out 1.4s infinite}
+.gstage.rv.on .r3-base{animation:fS 4.6s ease-in-out 1.4s infinite}
+@keyframes fS{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -2.6%;rotate:-1.6deg}}
+.rw{opacity:0}
+.gstage.rv.on .rw{animation:rwIn 7s cubic-bezier(.2,.9,.25,1) infinite}
+.gstage.rv.on .rw1{animation-delay:.5s}.gstage.rv.on .rw2{animation-delay:.68s}.gstage.rv.on .rw3{animation-delay:.86s}.gstage.rv.on .rw4{animation-delay:1.04s}.gstage.rv.on .rw5{animation-delay:1.22s}
+@keyframes rwIn{0%{opacity:0;transform:translateY(-2.2%) scale(.86)}7%{opacity:1;transform:translateY(.2%) scale(1.03)}11%{transform:none}88%{opacity:1;transform:none}96%,100%{opacity:0;transform:scale(.96)}}
+.rw1{transform-origin:47.5% 39.8%}.rw2{transform-origin:46.0% 47.1%}.rw3{transform-origin:44.9% 54.3%}.rw4{transform-origin:43.9% 62.0%}.rw5{transform-origin:43.1% 69.2%}
+@media (prefers-reduced-motion:reduce){.rw{opacity:1!important;animation:none!important}}
+
+/* ===== v57: lead section — deep violet + liquid glass form ===== */
+#ariza{background:radial-gradient(60% 50% at 15% 10%,rgba(124,58,237,.5),transparent 70%),radial-gradient(50% 45% at 90% 90%,rgba(192,38,211,.35),transparent 72%),radial-gradient(40% 40% at 70% 30%,rgba(91,34,240,.3),transparent 70%),#0C0720!important;color:#fff!important}
+#ariza .form{background:linear-gradient(155deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 45%,rgba(255,255,255,.08))!important;
+  border:1px solid rgba(255,255,255,.22)!important;-webkit-backdrop-filter:blur(26px) saturate(1.5);backdrop-filter:blur(26px) saturate(1.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.08),0 40px 90px -40px rgba(10,4,30,.8)!important;color:#fff}
+#ariza .form h2{color:#fff}
+#ariza .form > p,#ariza .fnote{color:rgba(255,255,255,.7)!important}
+#ariza .fld label,#ariza .fld .fl2{color:#C9B3FF!important}
+#ariza .fld input{background:rgba(255,255,255,.08)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)!important;color:#fff!important}
+#ariza .fld input::placeholder{color:rgba(255,255,255,.4)!important}
+#ariza .fld input:focus{background:rgba(255,255,255,.13)!important;box-shadow:inset 0 0 0 1.5px #B48CFF!important}
+#ariza .carq button{background:rgba(255,255,255,.1)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)!important;color:#fff!important}
+#ariza .carq button:hover,#ariza .carq button.on{background:var(--grad)!important;box-shadow:none!important}
+#ariza .seg2{background:rgba(255,255,255,.08)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)!important}
+#ariza .seg2 button{color:rgba(255,255,255,.75)!important}
+#ariza .seg2 button[aria-pressed="true"]{color:#fff!important}
+#ariza .chk{background:rgba(255,255,255,.08)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)!important;color:#fff}
+#ariza .chk span,#ariza .chk b{color:#fff!important}
+#ariza .chk input{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)!important}
+#ariza .ferr{color:#FF8BC7!important}
+#ariza .ok{background:rgba(255,255,255,.1)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)!important;color:#fff}
+#ariza .ok span{color:rgba(255,255,255,.75)!important}
+#ariza .pcard{color:#fff!important}
+#ariza .pcard .lab{color:#C9B3FF!important}
+#ariza .pcard .phone{color:#fff!important;-webkit-text-fill-color:#fff!important}
+#ariza .pc-row,#ariza .pc-row span{color:rgba(255,255,255,.72)!important}
+#ariza .side .tgbtn{color:#fff!important;text-shadow:none!important;
+  background:linear-gradient(155deg,rgba(255,255,255,.18),rgba(255,255,255,.06))!important;border:1px solid rgba(255,255,255,.22);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 18px 40px -20px rgba(10,4,30,.8)!important}
+#ariza .side .tgbtn::before{opacity:.25}
+#ariza .side .tgbtn small,#ariza .side .tgbtn span{color:rgba(255,255,255,.72)!important}
+#ariza .side .tgbtn b{color:#fff!important}
+#ariza .side .hint{color:rgba(255,255,255,.65)!important}
+
+/* ===== v58: dark compact footer (continues the lead section) ===== */
+footer{background:#0C0720!important;background-image:radial-gradient(50% 120% at 85% 0%,rgba(192,38,211,.18),transparent 70%)!important}
+footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,255,255,.6)!important;padding-top:24px!important;padding-bottom:28px!important}
+.fsoc a{color:#fff!important;background:linear-gradient(155deg,rgba(255,255,255,.18),rgba(255,255,255,.06))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 0 1px rgba(255,255,255,.14)!important}
+.fsoc a:hover{background:linear-gradient(155deg,rgba(255,255,255,.26),rgba(255,255,255,.1))!important}
+#ariza{padding-bottom:clamp(48px,6vw,96px)!important}
+@media (min-width:821px){footer .wrap{padding-right:max(190px,5vw)!important}}
+@media (max-width:820px){
+  footer .wrap{padding-top:20px!important;padding-bottom:24px!important;gap:12px}
+  #ariza{padding-bottom:40px!important}
+}
+
+/* ===== v59: floating chat sits higher on phones ===== */
+@media (max-width:820px){.chat{bottom:calc(84px + env(safe-area-inset-bottom,0px))!important}}
+
+@media (min-width:821px){.chat{transition:bottom .45s cubic-bezier(.22,.9,.24,1),opacity .3s,transform .3s!important}.chat.hi{bottom:104px!important}}
+
+/* ===== v60: glass screen reflection ===== */
+.r3-glass{opacity:.5}
+
+/* ===== v61: anchors + first-visit language sheet ===== */
+#bonus,#hujjatlar,#baraka,#ariza{scroll-margin-top:84px}
+.la{position:fixed;z-index:80;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(460px,calc(100% - 24px));translate:-50% 0;
+  padding:22px 20px 18px;border-radius:28px;color:#fff;text-align:center;isolation:isolate;overflow:hidden;
+  background:linear-gradient(160deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.05) 42%,rgba(255,255,255,.09) 100%);
+  -webkit-backdrop-filter:blur(30px) saturate(1.8) brightness(1.05);backdrop-filter:blur(30px) saturate(1.8) brightness(1.05);
+  border:1px solid rgba(255,255,255,.26);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.12),inset 1px 0 0 rgba(255,255,255,.14),inset -1px 0 0 rgba(255,255,255,.08),0 22px 50px -20px rgba(0,0,0,.65);
+  opacity:0;transform:translateY(calc(100% + 24px));transition:transform .5s cubic-bezier(.22,.9,.24,1),opacity .35s ease}
+.la::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;
+  background:radial-gradient(120% 70% at 20% -10%,rgba(255,255,255,.22),transparent 55%),radial-gradient(90% 60% at 110% 120%,rgba(255,255,255,.08),transparent 60%)}
+.la.in{opacity:1;transform:none}
+.la[hidden]{display:none}
+.la-t{margin:0 30px;font-size:clamp(15px,4.3vw,18px);white-space:nowrap;font-weight:600;line-height:1.3}
+.la-s{margin:4px 0 0;font-size:15px;color:rgba(255,255,255,.78)}
+.la-t{text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.la-b{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.la-b button{min-height:48px;padding:0 6px;border-radius:16px;border:1px solid rgba(255,255,255,.22);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));box-shadow:inset 0 1px 0 rgba(255,255,255,.35);color:#fff;font:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s,transform .12s}
+.la-b button:hover{background:rgba(255,255,255,.16)}
+.la-b button:active{transform:scale(.97)}
+.la-b button.on{background:linear-gradient(160deg,rgba(255,255,255,.28),rgba(255,255,255,.1)),var(--grad);border-color:rgba(255,255,255,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 26px -12px rgba(194,27,234,.9)}
+.la-b button:focus-visible,.la-x:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.la-x{position:absolute;top:8px;right:8px;width:40px;height:40px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.la{transition:opacity .2s ease;transform:none}}
 </style>
 </head>
 <body>
@@ -1289,11 +1672,11 @@ h1 .l{max-width:100%}
 <header>
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Royal GO — WB Taxi"><img src="img/logo.png" alt="Royal GO" width="589" height="85"><i aria-hidden="true"></i><img class="wbl" src="img/wb-white.png" alt="WB Taxi" width="433" height="120"></a>
-    <nav aria-label="Menu">
-      <a href="#shartlar" data-ru="Условия">Shartlar</a>
-      <a href="#baraka" data-ru="«Барака»">Baraka</a>
-      <a href="#ofis" data-ru="Офис">Ofis</a>
-      <a href="#savollar" data-ru="Вопросы">Savollar</a>
+    <nav aria-label="Меню">
+      <a href="#shartlar" data-uz="Shartlar">Условия</a>
+      <a href="#baraka" data-uz="Baraka">«Барака»</a>
+      <a href="#ofis" data-uz="Ofis">Офис</a>
+      <a href="#savollar" data-uz="Savollar">Вопросы</a>
     </nav>
     <div class="hr">
       <span class="hsoc2"><a href="https://t.me/wbtaxiroyal" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg></a><a href="https://www.instagram.com/wb_royal_go/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/profile.php?id=61593891787800" target="_blank" rel="noopener" aria-label="Facebook" data-fb><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6V21H14v-9.3h2.6l.4-3.2H14Z"/></svg></a></span>
@@ -1302,7 +1685,7 @@ h1 .l{max-width:100%}
         <button type="button" data-lang="kr" aria-pressed="false" aria-label="Ўзбекча (кирилл)">ЎЗ</button>
         <button type="button" data-lang="ru" aria-pressed="false">RU</button>
       </div>
-      <a class="hcta" href="#ariza" data-ru="Заявка">Ariza qoldirish</a>
+      <a class="hcta" href="#ariza" data-uz="Ariza qoldirish">Заявка</a>
     </div>
   </div>
 </header>
@@ -1312,17 +1695,17 @@ h1 .l{max-width:100%}
   <div class="top wrap">
     <span class="hsoc"><a href="https://t.me/wbtaxiroyal" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg></a><a href="https://www.instagram.com/wb_royal_go/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/profile.php?id=61593891787800" target="_blank" rel="noopener" aria-label="Facebook" data-fb><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6V21H14v-9.3h2.6l.4-3.2H14Z"/></svg></a></span>
     <h1>
-      <span class="l"><span style="--i:0" class="h1a" data-ru="Зарабатывайте">WB Taxi’da biz bilan</span></span>
-      <span class="l"><span style="--i:1" class="hl-glass"><span class="soft" data-ru="в WB Taxi вместе с нами">daromad qiling</span></span></span>
+      <span class="l"><span style="--i:0" class="h1a" data-uz="WB Taxi’da biz bilan">Зарабатывайте в WB Taxi</span></span>
+      <span class="l"><span style="--i:1" class="hl-glass"><span class="soft" data-uz="daromad qiling">вместе с нами</span></span></span>
     </h1>
-    <p class="sub fade" data-ru="Royal GO — один из первых официальных партнёров WB Taxi в Узбекистане. Быстрое подключение, моментальные выплаты и техническая поддержка для каждого водителя.">Royal GO — WB Taxi’ning O‘zbekistondagi birinchi rasmiy hamkorlaridan biri. Tez ulanish, tezkor to‘lovlar va har bir haydovchi uchun texnik yordam.</p>
-    <div class="trust fade"><span class="av" aria-hidden="true"><i></i><i></i><i></i></span><span data-ru="Нам доверяют <b>5 000+</b> водителей">Bizga <b>5 000+</b> haydovchi ishonadi</span></div>
+    <p class="sub fade" data-uz="Royal GO — WB Taxi’ning O‘zbekistondagi birinchi rasmiy hamkorlaridan biri. Tez ulanish, tezkor to‘lovlar va har bir haydovchi uchun texnik yordam.">Royal GO — один из первых официальных партнёров WB Taxi в Узбекистане. Быстрое подключение, моментальные выплаты и техническая поддержка для каждого водителя.</p>
+    <div class="trust fade"><span class="av" aria-hidden="true"><i></i><i></i><i></i></span><span data-uz="Bizga <b>5 000+</b> haydovchi ishonadi">Нам доверяют <b>5 000+</b> водителей</span></div>
   </div>
 
   <div class="stage">
     <div class="car">
       <div class="body">
-        <img src="img/body.webp" srcset="img/body-1400.webp 1400w, img/body.webp 2000w" sizes="(max-width:820px) 132vw, 78vw" alt="WB Taxi — Royal GO" width="2000" height="623">
+        <img fetchpriority="high" decoding="async" src="img/body.webp" srcset="img/body-1400.webp 1400w, img/body.webp 2000w" sizes="(max-width:820px) 132vw, 78vw" alt="WB Taxi — Royal GO" width="2000" height="623">
         <img class="wh w1" src="img/wheel.webp" alt="" aria-hidden="true" width="320" height="320">
         <img class="whl w1" src="img/wheel-light.png" alt="" aria-hidden="true" width="320" height="320">
         <img class="wh w2" src="img/wheel.webp" alt="" aria-hidden="true" width="320" height="320">
@@ -1341,12 +1724,12 @@ h1 .l{max-width:100%}
   <div class="bar">
     <div class="wrap">
       <div class="specs fade">
-        <div class="spec"><b data-ru="50 000 сум">50 000 so‘m</b><span data-ru="бонус за подключение">ulanish bonusi</span></div>
-        <div class="spec"><b data-ru="«Барака»">«Baraka»</b><span data-ru="акция с подарками">sovg‘alar aksiyasi</span></div>
-        <div class="spec"><b data-ru="Быстрые">Tezkor</b><span data-ru="выплаты">to‘lovlar</span></div>
+        <div class="spec"><b data-uz="50 000 so‘m">50 000 сум</b><span data-uz="ulanish bonusi">бонус за подключение</span></div>
+        <div class="spec"><b data-uz="«Baraka»">«Барака»</b><span data-uz="sovg‘alar aksiyasi">акция с подарками</span></div>
+        <div class="spec"><b data-uz="Tezkor">Быстрые</b><span data-uz="to‘lovlar">выплаты</span></div>
       </div>
       <div class="acts fade">
-        <a class="btn w" href="#ariza"><span data-ru="Оставить заявку">Ariza qoldirish</span>
+        <a class="btn w" href="#ariza"><span data-uz="Ariza qoldirish">Оставить заявку</span>
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
         <a class="btn o" href="tel:+998781138183">78 113 81 83</a>
       </div>
@@ -1356,40 +1739,44 @@ h1 .l{max-width:100%}
 
 <section class="sec" id="shartlar">
   <div class="wrap">
-    <div class="sh rv"><span class="lab" data-ru="Условия">Shartlar</span><h2 data-ru="Для водителя всё просто и понятно.">Haydovchi uchun hammasi juda oddiy va aniq.</h2></div>
+    <div class="sh rv"><span class="lab" data-uz="Shartlar">Условия</span><h2 data-uz="Haydovchi uchun hammasi juda oddiy va aniq.">Для водителя всё просто и понятно.</h2></div>
     <div class="bento">
-      <div class="tile t-bonus rv">
-        <span class="lab" data-ru="Бонус за подключение">Ulanish bonusi</span>
-        <div class="big"><span class="count" data-to="50000">50 000</span><small data-ru="сум">so‘m</small></div>
-        <p data-ru="Начисляется, когда вы начинаете работать через Royal GO.">Royal GO orqali ish boshlaganingizda beriladi.</p>
+      <div class="tile t-bonus rv" id="bonus">
+        <span class="lab" data-uz="Ulanish bonusi">Бонус за подключение</span>
+        <div class="big"><span class="count" data-to="50000">50 000</span><small data-uz="so‘m">сум</small></div>
+        <p data-uz="Royal GO orqali ish boshlaganingizda beriladi.">Начисляется, когда вы начинаете работать через Royal GO.</p>
       </div>
-      <div class="tile t-gift rv" style="--d:1">
-        <div class="minis" aria-hidden="true">
-          <div class="mini m-money"><img src="img/logo-ink.png" alt="" width="589" height="85"><b>1 000 000</b><span data-ru="сум · денежный приз">so‘m · pul mukofoti</span></div>
-          <div class="mini m-wash"><img class="mlogo" src="img/moyka-white.png" alt="" width="1042" height="640"></div>
-          <div class="mini m-fuel"><img src="img/cert-fuel-sm.webp" alt="" width="768" height="286"></div>
+      <div class="tile t-gift t-fr rv" style="--d:1" onclick="if(!event.target.closest('a'))window.open('https://t.me/Royal_taxWB','_blank')">
+        <span class="lab" data-uz="Do‘stingizni taklif qiling va daromadingizni ko‘paytiring">Пригласите друга и увеличьте свой доход</span>
+        <div class="frbig"><span class="count" data-to="100000">100 000</span><small data-uz="so‘m">сум</small></div>
+        <h3 data-uz="har bir do‘stingiz uchun">за каждого друга</h3>
+        <p data-uz="Do‘stingiz bir haftada 50 ta buyurtma bajarganda. Do‘stingizga — 50 000 so‘m. Dekabr oxirigacha.">Когда друг выполнит 50 заказов за неделю. Другу — 50 000 сум. До конца декабря.</p>
+        <a href="https://t.me/Royal_taxWB" target="_blank" rel="noopener"><span data-uz="Taklif qilish">Пригласить</span> <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      </div>
+      <div class="tile t-juma rv">
+        <div class="jm-l">
+          <span class="lab">JUMA hayriyasi</span>
+          <h3 data-uz="Har juma 10 nafar haydovchiga 100&amp;nbsp;000&amp;nbsp;so‘m bonus">Каждую пятницу 10 водителям — 100&nbsp;000&nbsp;сум бонусом</h3>
+          <p data-uz="Har hafta bazamizdagi tasodifiy tanlangan 10 nafar haydovchiga 100&amp;nbsp;000&amp;nbsp;so‘mni bonus tariqasida to‘g‘ridan-to‘g‘ri balansiga tushirib beramiz.">Каждую неделю 10 случайно выбранных водителей из нашей базы получают 100&nbsp;000&nbsp;сум бонусом прямо на баланс.</p>
         </div>
-        <span class="lab" data-ru="Акция «Барака»">«Baraka» aksiyasi</span>
-        <h3 data-ru="Ценные подарки">Qimmatbaho sovg‘alar</h3>
-        <p data-ru="Денежные призы, сертификаты на 25 литров бензина и карты на автомойку — активным водителям.">Faol haydovchilarga pul mukofotlari, 25 litr benzin sertifikatlari va avtomoyka kartalari.</p>
-        <a href="#baraka"><span data-ru="Подробнее">Batafsil</span> <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+        <div class="jm-r"><span class="jm-x">10 ×</span><b class="count" data-to="100000">100 000</b><small data-uz="so‘m balansga">сум на баланс</small></div>
       </div>
-      <div class="tile t-sm rv" style="--d:0">
-        <img src="img/wb-white.png" alt="WB Taxi" width="433" height="120">
-        <b data-ru="Официальный партнёр">Rasmiy hamkor</b><p data-ru="Один из первых официальных партнёров WB Taxi в Узбекистане.">WB Taxi’ning O‘zbekistondagi birinchi rasmiy hamkorlaridan biri.</p>
+      <div class="tile t-sm rv" style="--d:0" role="button" tabindex="0" data-loc="partner" aria-haspopup="dialog">
+        <img src="img/wb-white.png" alt="WB Taxi" width="433" height="120" loading="lazy" decoding="async">
+        <b data-uz="Rasmiy hamkor">Официальный партнёр</b><p data-uz="WB Taxi’ning O‘zbekistondagi birinchi rasmiy hamkorlaridan biri.">Один из первых официальных партнёров WB Taxi в Узбекистане.</p>
       </div>
-      <div class="tile t-sm rv" style="--d:1">
+      <div class="tile t-sm rv" style="--d:1" role="button" tabindex="0" data-loc="pay" aria-haspopup="dialog">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z"/></svg></span>
-        <b data-ru="Моментальные выплаты">Tezkor to‘lovlar</b><p data-ru="Заработок быстро выводите на свою карту.">Ishlagan pulingizni kartangizga tez yechib olasiz.</p>
+        <b data-uz="Tezkor to‘lovlar">Моментальные выплаты</b><p data-uz="Ishlagan pulingizni kartangizga tez yechib olasiz.">Заработок быстро выводите на свою карту.</p>
       </div>
-      <div class="tile t-sm rv" style="--d:2">
+      <div class="tile t-sm rv" style="--d:2" role="button" tabindex="0" data-loc="support" aria-haspopup="dialog">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg></span>
-        <b data-ru="Техническая поддержка">Texnik yordam</b><p data-ru="Помогаем с приложением и любыми вопросами по работе.">Ilova va ish bo‘yicha har qanday savolda yordam beramiz.</p>
+        <b data-uz="Texnik yordam">Техническая поддержка</b><p data-uz="Ilova va ish bo‘yicha har qanday savolda yordam beramiz.">Помогаем с приложением и любыми вопросами по работе.</p>
       </div>
       <a class="tile t-daily rv" href="https://t.me/wbtaxiroyal" target="_blank" rel="noopener">
         <span class="di"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg></span>
-        <span class="dt"><b data-ru="Ежедневные бонусы WB Taxi">WB Taxi kunlik bonuslari</b><span data-ru="Прайс на сегодня — в Telegram">Bugungi narxlar — Telegram'da</span></span>
-        <span class="dgo" data-ru="Узнать →">Bilish →</span>
+        <span class="dt"><b data-uz="WB Taxi kunlik bonuslari">Ежедневные бонусы WB Taxi</b><span data-uz="Bugungi narxlar — Telegram'da">Прайс на сегодня — в Telegram</span></span>
+        <span class="dgo" data-uz="Bilish →">Узнать →</span>
       </a>
     </div>
   </div>
@@ -1397,12 +1784,12 @@ h1 .l{max-width:100%}
 
 <section class="sec who" style="padding-top:0">
   <div class="wrap">
-    <div class="sh rv"><span class="lab" data-ru="Для кого">Kimlar uchun</span><h2 data-ru="Новый водитель или из другого парка? Неважно — быстро подключим!">Yangi haydovchimisiz yoki boshqa parkdanmisiz? Ahamiyati yo‘q — tezda ulaymiz!</h2></div>
+    <div class="sh rv"><span class="lab" data-uz="Kimlar uchun">Для кого</span><h2 data-uz="Yangi haydovchimisiz yoki boshqa parkdanmisiz? Ahamiyati yo‘q — tezda ulaymiz!">Новый водитель или из другого парка? Неважно — быстро подключим!</h2></div>
     <div class="two">
-      <div class="card rv" style="--d:0"><span class="lab" data-ru="01 · Новый водитель">01 · Yangi haydovchi</span><h3 data-ru="Ещё не работали в WB Taxi?">WB Taxi'da hali ishlamaganmisiz?</h3><p data-ru="Быстро подключим и проведём до первого выхода на линию.">Tez ulaymiz va birinchi liniyaga chiqishgacha kuzatib boramiz.</p>
-        <a class="go" href="#ariza"><span data-ru="Подключиться">Ulanish</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></a></div>
-      <div class="card rv" style="--d:1"><span class="lab" data-ru="02 · Из другого парка">02 · Boshqa parkdan</span><h3 data-ru="Работаете в другом таксопарке?">Boshqa taksoparkda ishlaysizmi?</h3><p data-ru="Поможем перейти в Royal GO быстро и без хлопот.">Royal GO'ga tez va tashvishsiz o‘tishga yordam beramiz.</p>
-        <a class="go" href="#ariza"><span data-ru="Перейти">O‘tish</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></a></div>
+      <div class="card rv" style="--d:0"><span class="lab" data-uz="01 · Yangi haydovchi">01 · Новый водитель</span><h3 data-uz="WB Taxi'da hali ishlamaganmisiz?">Ещё не работали в WB Taxi?</h3><p data-uz="Tez ulaymiz va birinchi liniyaga chiqishgacha kuzatib boramiz.">Быстро подключим и проведём до первого выхода на линию.</p>
+        <a class="go" href="#ariza"><span data-uz="Ulanish">Подключиться</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></a></div>
+      <div class="card rv" style="--d:1"><span class="lab" data-uz="02 · Boshqa parkdan">02 · Из другого парка</span><h3 data-uz="Boshqa taksoparkda ishlaysizmi?">Работаете в другом таксопарке?</h3><p data-uz="Royal GO'ga tez va tashvishsiz o‘tishga yordam beramiz.">Поможем перейти в Royal GO быстро и без хлопот.</p>
+        <a class="go" href="#ariza"><span data-uz="O‘tish">Перейти</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -1410,65 +1797,70 @@ h1 .l{max-width:100%}
 <section class="sec bk" id="baraka">
   <div class="wrap">
     <div class="txt">
-      <span class="lab rv" data-ru="Акция">Aksiya</span>
+      <span class="lab rv" data-uz="Aksiya">Акция</span>
       <h2 class="bw rv">Baraka</h2>
-      <p class="bl rv" data-ru="Ценные подарки акции «Барака» — активным водителям.">Faol haydovchilarga «Baraka» aksiyasining qimmatbaho sovg‘alari.</p>
-      <ul class="prz rv"><li><button type="button" class="pbtn" data-p="money" aria-expanded="false" aria-controls="pz-money"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg></i><b data-ru="Денежные призы">Pul mukofotlari</b></button></li><li><button type="button" class="pbtn" data-p="fuel" aria-expanded="false" aria-controls="pz-fuel"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16M3 21h13M6.5 7h6M15 9h2a2 2 0 0 1 2 2v6a1.5 1.5 0 0 0 3 0V9l-3-3"/></svg></i><b data-ru="25 л бензина">25 litr benzin</b></button></li><li><button type="button" class="pbtn" data-p="wash" aria-expanded="false" aria-controls="pz-wash"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11Z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></svg></i><b data-ru="Автомойка">Avtomoyka</b></button></li></ul>
-      <div class="pdet" aria-live="polite"><div class="pdet-in"><div class="ppane" id="pz-money" role="region" hidden><div class="prow"><b data-ru="1 место">1-o‘rin</b><span data-ru="1 000 000 сум + 25 л бензина + карта автомойки">1 000 000 so‘m + 25 litr benzin + avtomoyka kartasi</span></div><div class="prow"><b data-ru="2–3 места">2–3-o‘rin</b><span data-ru="1 000 000 сум + карта автомойки">1 000 000 so‘m + avtomoyka kartasi</span></div><p class="pnote" data-ru="Каждые 10 дней — 20 водителей с наибольшим количеством заказов.">Har 10 kunda — eng ko‘p buyurtma bajargan 20 nafar haydovchi.</p></div><div class="ppane" id="pz-fuel" role="region" hidden><div class="prow"><b data-ru="1 место">1-o‘rin</b><span data-ru="25 л бензина — вместе с денежным призом">25 litr benzin — pul mukofotiga qo‘shimcha</span></div><div class="prow"><b data-ru="4–10 места">4–10-o‘rin</b><span data-ru="Сертификат на 25 л бензина">25 litr benzin sertifikati</span></div><p class="pnote" data-ru="Каждые 10 дней — 20 водителей с наибольшим количеством заказов.">Har 10 kunda — eng ko‘p buyurtma bajargan 20 nafar haydovchi.</p></div><div class="ppane" id="pz-wash" role="region" hidden><div class="prow"><b data-ru="1–3 места">1–3-o‘rin</b><span data-ru="Карта автомойки — вместе с денежным призом">Avtomoyka kartasi — pul mukofotiga qo‘shimcha</span></div><div class="prow"><b data-ru="11–20 места">11–20-o‘rin</b><span data-ru="Карта автомойки">Avtomoyka kartasi</span></div><p class="pnote" data-ru="Каждые 10 дней — 20 водителей с наибольшим количеством заказов.">Har 10 kunda — eng ko‘p buyurtma bajargan 20 nafar haydovchi.</p></div></div></div>
       <div class="bitems rv">
-        <div><b data-ru="Для кого">Kim uchun</b><span data-ru="Для водителей, которые активно работают и выполняют больше заказов.">Faol ishlaydigan va ko‘proq buyurtma bajaradigan haydovchilar uchun.</span></div>
-        <div><b data-ru="Каждые 10 дней — 20 победителей">Har 10 kunda — 20 g‘olib</b><span data-ru="Каждые 10 дней 20 водителей, выполнивших больше всего заказов, получают призы.">Har 10 kunda eng ko‘p buyurtma bajargan 20 nafar haydovchi sovg‘alarni oladi.</span></div>
+        <div><span data-uz="Har 10 kunda eng ko‘p buyurtma bajargan 20 nafar haydovchi sovrinlar oladi.">Каждые 10 дней 20 водителей, выполнивших больше всего заказов, получают призы.</span></div>
       </div>
     </div>
     <div class="gstage rv">
-      <div class="fan">
-        <div class="pc money" role="button" tabindex="0" data-loc="money" aria-haspopup="dialog" aria-label="1 000 000 so‘m">
-          <div class="t"><img src="img/logo-ink.png" alt="" width="589" height="85"><span data-ru="Денежный приз">Pul mukofoti</span></div>
-          <div class="amt" data-ru="1 000 000<small>сум</small>">1 000 000<small>so‘m</small></div>
+      <div class="r3d">
+        <div class="r3 r3-base">
+          <img class="r3" src="img/bk5-base.webp" alt="Акция «Барака» в приложении Royal GO: призы TOP-20" width="1600" height="1240" loading="lazy" decoding="async">
+          <img class="r3 rw rw1" src="img/bk4-row1.webp" alt="" aria-hidden="true" width="1600" height="1240" loading="lazy" decoding="async">
+          <img class="r3 rw rw2" src="img/bk4-row2.webp" alt="" aria-hidden="true" width="1600" height="1240" loading="lazy" decoding="async">
+          <img class="r3 rw rw3" src="img/bk4-row3.webp" alt="" aria-hidden="true" width="1600" height="1240" loading="lazy" decoding="async">
+          <img class="r3 rw rw4" src="img/bk4-row4.webp" alt="" aria-hidden="true" width="1600" height="1240" loading="lazy" decoding="async">
+          <img class="r3 rw rw5" src="img/bk4-row5.webp" alt="" aria-hidden="true" width="1600" height="1240" loading="lazy" decoding="async">
+          <img class="r3 r3-glass" src="img/bk5-glass.webp" alt="" aria-hidden="true" width="1600" height="1240" loading="lazy" decoding="async">
         </div>
-        <div class="pc wash" role="button" tabindex="0" data-loc="wash" aria-haspopup="dialog" aria-label="Moyka DS">
-          <img class="mlogo" src="img/moyka-white.png" alt="Moyka DS" width="1042" height="640">
-          <span class="s" data-ru="карта на автомойку">avtomoyka kartasi</span>
-        </div>
-        <div class="pc fuel" role="button" tabindex="0" data-loc="fuel" aria-haspopup="dialog" aria-label="Astoria Oil">
-          <img src="img/cert-fuel-sm.webp" srcset="img/cert-fuel-sm.webp 768w, img/cert-fuel.webp 1536w" sizes="(max-width:820px) 90vw, 480px" alt="Benzin uchun sovg‘a sertifikati — 25 litr" width="1536" height="572">
-        </div>
+        <div class="r3 r3k k-c40"><img src="img/bk3-c40.webp" alt="Сертификат Astoria Oil: 40 литров бензина" width="1600" height="1240" loading="lazy" decoding="async"><i class="holo" aria-hidden="true"></i></div>
+        <div class="r3 r3k k-c25"><img src="img/bk3-c25.webp" alt="Сертификат Astoria Oil: 25 литров бензина" width="1600" height="1240" loading="lazy" decoding="async"><i class="holo" aria-hidden="true"></i></div>
+        <div class="r3 r3k k-v1"><img src="img/bk4-v1.webp" alt="1 место: 1 200 000 сум" width="1600" height="1240" loading="lazy" decoding="async"><i class="holo" aria-hidden="true"></i></div>
+        <div class="r3 r3k k-v2"><img src="img/bk4-v2.webp" alt="2–3 место: 600 000 сум" width="1600" height="1240" loading="lazy" decoding="async"><i class="holo" aria-hidden="true"></i></div>
+        <button type="button" class="r3hot h-c40" data-loc="fuel" aria-haspopup="dialog" aria-label="Сертификат на 40 л бензина"></button>
+        <button type="button" class="r3hot h-c25" data-loc="fuel" aria-haspopup="dialog" aria-label="Сертификат на 25 л бензина"></button>
+        <button type="button" class="r3hot h-v1" data-loc="v1" aria-haspopup="dialog" aria-label="1 200 000 сум"></button>
+        <button type="button" class="r3hot h-v2" data-loc="v2" aria-haspopup="dialog" aria-label="600 000 сум"></button>
       </div>
-      <p class="lochint" data-ru="Нажмите на нужный приз и выберите ближайшую локацию">Kerakli sovg‘ani bosing va eng yaqin manzilni tanlang</p>
+      <div class="bbtns">
+        <button type="button" class="bbtn" data-loc="money" aria-haspopup="dialog"><span class="bb-t"><b data-uz="Mukofotlar haqida batafsil">Подробнее о призах</b><small data-uz="1–20-o‘rinlar: pul va benzin">1–20 места: деньги и бензин</small></span><span class="bb-a" aria-hidden="true">→</span></button>
+      </div>
+      <p class="lochint" data-uz="Kerakli sovg‘ani ustiga bosing">Нажмите на нужный приз</p>
     </div>
   </div>
 </section>
 
-<section class="sec docs">
+<section class="sec docs" id="hujjatlar">
   <div class="wrap">
-    <div class="sh rv"><span class="lab" data-ru="Документы">Hujjatlar</span><h2 data-ru="Что нужно для подключения.">Ulanish uchun nima kerak.</h2></div>
+    <div class="sh rv"><span class="lab" data-uz="Hujjatlar">Документы</span><h2 data-uz="Ulanish uchun nima kerak.">Что нужно для подключения.</h2></div>
     <ol class="dl">
-      <li class="rv" style="--d:0"><span data-ru="Водительское удостоверение">Haydovchilik guvohnomasi</span></li>
-      <li class="rv" style="--d:1"><span data-ru="Техпаспорт автомобиля">Avtomobil texpasporti</span></li>
-      <li class="rv" style="--d:2"><span data-ru="Паспорт">Pasport</span></li>
-      <li class="rv" style="--d:3"><span data-ru="Лицензия">Litsenziya</span></li>
-      <li class="rv" style="--d:4"><span data-ru="Телефон на Android — для приложения WB Taxi">Android telefon — WB Taxi ilovasi uchun</span></li>
-      <li class="rv" style="--d:5"><span data-ru="Селфи — фото на фронтальную камеру">Selfi — old kameradagi surat</span></li>
-      <li class="rv" style="--d:6"><span data-ru="Фото автомобиля с 4 сторон">Avtomobil surati — 4 tomondan</span></li>
+      <li class="rv" style="--d:0"><span data-uz="Haydovchilik guvohnomasi">Водительское удостоверение</span></li>
+      <li class="rv" style="--d:1"><span data-uz="Avtomobil texpasporti">Техпаспорт автомобиля</span></li>
+      <li class="rv" style="--d:2"><span data-uz="Pasport">Паспорт</span></li>
+      <li class="rv" style="--d:3"><span data-uz="Litsenziya">Лицензия</span></li>
+      <li class="rv" style="--d:4"><span data-uz="Android telefon — WB Taxi ilovasi uchun">Телефон на Android — для приложения WB Taxi</span></li>
+      <li class="rv" style="--d:5"><span data-uz="Selfi — old kameradagi surat">Селфи — фото на фронтальную камеру</span></li>
+      <li class="rv" style="--d:6"><span data-uz="Avtomobil surati — 4 tomondan">Фото автомобиля с 4 сторон</span></li>
     </ol>
   </div>
 </section>
 
 <section class="sec office" id="ofis" style="padding-top:0">
   <div class="wrap">
-    <div class="sh rv"><span class="lab" data-ru="Офис">Ofis</span><h2 data-ru="Ждём вас в нашем офисе.">Ofisimizga marhamat.</h2></div>
+    <div class="sh rv"><span class="lab" data-uz="Ofis">Офис</span><h2 data-uz="Ofisimizga marhamat.">Ждём вас в нашем офисе.</h2></div>
     <div class="og merged rv">
       <div class="mapbox">
         <a class="mapcta" id="ymapbig" data-loc="office" aria-haspopup="dialog" href="https://yandex.uz/maps/10335/tashkent/?ll=69.227496%2C41.327965&amp;mode=whatshere&amp;whatshere%5Bpoint%5D=69.227402%2C41.327968&amp;whatshere%5Bzoom%5D=19&amp;z=18" target="_blank" rel="noopener">
           <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
           <b>Royal GO</b>
-          <span data-ru="Ташкент · Алмазар · Лангар, 76А · у Чорсу">Toshkent · Olmazor · Langar, 76A · Chorsu yonida</span>
+          <span data-uz="Toshkent · Olmazor · Langar, 76A · Chorsu yonida">Ташкент · Алмазар · Лангар, 76А · у Чорсу</span>
         </a>
       </div>
       <div class="ocard">
-        <span class="lab" data-ru="Адрес">Manzil</span>
-        <h3 data-ru="г. Ташкент, Алмазарский район, улица Лангар, 76А">Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A</h3>
-        <p data-ru="Со стороны базара Чорсу. Перед визитом позвоните — встретим.">Chorsu bozori tomondan. Kelishdan oldin qo‘ng‘iroq qiling — kutib olamiz.</p>
+        <span class="lab" data-uz="Manzil">Адрес</span>
+        <h3 data-uz="Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A">г. Ташкент, Алмазарский район, улица Лангар, 76А</h3>
+        <p data-uz="Chorsu bozori tomondan. Kelishdan oldin qo‘ng‘iroq qiling — kutib olamiz.">Со стороны базара Чорсу. Перед визитом позвоните — встретим.</p>
         <div class="btns">
           <a class="btn o" href="tel:+998781138183">78 113 81 83</a>
         </div>
@@ -1479,14 +1871,14 @@ h1 .l{max-width:100%}
 
 <section class="sec" id="savollar" style="padding-top:0">
   <div class="wrap">
-    <div class="sh rv"><span class="lab" data-ru="Вопросы">Savollar</span><h2 data-ru="Частые вопросы.">Ko‘p beriladigan savollar.</h2></div>
+    <div class="sh rv"><span class="lab" data-uz="Savollar">Вопросы</span><h2 data-uz="Ko‘p beriladigan savollar.">Частые вопросы.</h2></div>
     <div class="faq">
-      <details name="q"><summary><span class="q" data-ru="Где находится офис?">Ofis qayerda?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-ru="г. Ташкент, Алмазарский район, улица Лангар, 76А — со стороны базара Чорсу.">Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A — Chorsu bozori tomondan.</p></div></details>
-      <details name="q"><summary><span class="q" data-ru="Какие нужны документы?">Qanday hujjatlar kerak?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-ru="Водительское удостоверение, техпаспорт, паспорт, лицензия, телефон на Android, селфи на фронтальную камеру и фото автомобиля с 4 сторон.">Haydovchilik guvohnomasi, texpasport, pasport, litsenziya, Android telefon, old kameradagi selfi va avtomobilning 4 tomondan surati.</p></div></details>
-      <details name="q"><summary><span class="q" data-ru="Как перейти из другого парка?">Boshqa parkdan qanday o‘taman?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-ru="Оставьте заявку — менеджер свяжется с вами и проведёт по каждому шагу перехода.">Ariza qoldiring — menejer siz bilan bog‘lanib, o‘tishning har bir qadamida yordam beradi.</p></div></details>
-      <details name="q"><summary><span class="q" data-ru="Когда начисляется бонус за подключение?">Ulanish bonusi qachon beriladi?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-ru="Когда вы начинаете работать через Royal GO — 50 000 сум.">Royal GO orqali ish boshlaganingizda — 50 000 so‘m.</p></div></details>
-      <details name="q"><summary><span class="q" data-ru="Как участвовать в акции «Барака»?">«Baraka» aksiyasida qanday qatnashaman?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-ru="Работайте активно: каждые 10 дней 20 водителей, выполнивших больше всего заказов, получают призы — 1 000 000 сум, сертификаты на 25 л бензина и карты на автомойку.">Faol ishlang: har 10 kunda eng ko‘p buyurtma bajargan 20 nafar haydovchi sovg‘alarni oladi — 1 000 000 so‘m, 25 litr benzin sertifikatlari va avtomoyka kartalari.</p></div></details>
-      <details name="q"><summary><span class="q" data-ru="О нас">Biz haqimizda</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-ru="Таксопарк Royal GO — один из первых официальных партнёров WB Taxi в Узбекистане.">Royal GO taksoparki — WB Taxi’ning O‘zbekistondagi birinchi rasmiy hamkorlaridan biri.</p></div></details>
+      <details name="q"><summary><span class="q" data-uz="Ofis qayerda?">Где находится офис?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-uz="Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A — Chorsu bozori tomondan.">г. Ташкент, Алмазарский район, улица Лангар, 76А — со стороны базара Чорсу.</p></div></details>
+      <details name="q"><summary><span class="q" data-uz="Qanday hujjatlar kerak?">Какие нужны документы?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-uz="Haydovchilik guvohnomasi, texpasport, pasport, litsenziya, Android telefon, old kameradagi selfi va avtomobilning 4 tomondan surati.">Водительское удостоверение, техпаспорт, паспорт, лицензия, телефон на Android, селфи на фронтальную камеру и фото автомобиля с 4 сторон.</p></div></details>
+      <details name="q"><summary><span class="q" data-uz="Boshqa parkdan qanday o‘taman?">Как перейти из другого парка?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-uz="Ariza qoldiring — menejer siz bilan bog‘lanib, o‘tishning har bir qadamida yordam beradi.">Оставьте заявку — менеджер свяжется с вами и проведёт по каждому шагу перехода.</p></div></details>
+      <details name="q"><summary><span class="q" data-uz="Ulanish bonusi qachon beriladi?">Когда начисляется бонус за подключение?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-uz="Royal GO orqali ish boshlaganingizda — 50 000 so‘m.">Когда вы начинаете работать через Royal GO — 50 000 сум.</p></div></details>
+      <details name="q"><summary><span class="q" data-uz="«Baraka» aksiyasida qanday qatnashaman?">Как участвовать в акции «Барака»?</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-uz="Faol ishlang: har 10 kunda eng ko‘p buyurtma bajargan 20 nafar haydovchi sovg‘alarni oladi — pul mukofotlari va benzin sertifikatlari (40 litr va 25 litr).">Работайте активно: каждые 10 дней 20 водителей, выполнивших больше всего заказов, получают призы — денежные призы и сертификаты на бензин (40 л и 25 л).</p></div></details>
+      <details name="q"><summary><span class="q" data-uz="Biz haqimizda">О нас</span><i class="pl" aria-hidden="true"></i></summary><div class="a"><p data-uz="Royal GO taksoparki — WB Taxi’ning O‘zbekistondagi birinchi rasmiy hamkorlaridan biri.">Таксопарк Royal GO — один из первых официальных партнёров WB Taxi в Узбекистане.</p></div></details>
     </div>
   </div>
 </section>
@@ -1494,38 +1886,38 @@ h1 .l{max-width:100%}
 <section class="sec lead" id="ariza" style="padding-top:0">
   <div class="wrap lg">
     <form class="form rv" id="leadForm" novalidate>
-      <h2 data-ru="Оставьте заявку">Ariza qoldiring</h2>
-      <p data-ru="Мы свяжемся с вами, объясним, как подключиться, и расскажем о бонусе и акции «Барака».">Siz bilan bog‘lanib, qanday ulanishni tushuntiramiz hamda bonus va «Baraka» aksiyasi haqida aytib beramiz.</p>
+      <h2 data-uz="Ariza qoldiring">Оставьте заявку</h2>
+      <p data-uz="Siz bilan bog‘lanib, qanday ulanishni tushuntiramiz hamda bonus va «Baraka» aksiyasi haqida aytib beramiz.">Мы свяжемся с вами, объясним, как подключиться, и расскажем о бонусе и акции «Барака».</p>
       <div class="fg">
-        <div class="fld"><label for="fName" data-ru="Ваше имя">Ismingiz</label><input id="fName" name="name" autocomplete="name" placeholder="Alisher" maxlength="40" required></div>
-        <div class="fld"><label for="fPhone" data-ru="Телефон">Telefon</label><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required></div>
-        <div class="fld full"><label for="fCar" data-ru="Ваш автомобиль">Avtomobilingiz</label><input id="fCar" name="car" autocomplete="off" placeholder="Chevrolet Cobalt, 2021" maxlength="60" required>
-          <div class="carq" role="group" aria-label="Avtomobil"><button type="button">Cobalt</button><button type="button">Gentra</button><button type="button">Nexia 3</button><button type="button">Malibu</button><button type="button">Onix</button><button type="button" data-ru="Другая">Boshqa</button></div>
+        <div class="fld"><label for="fName" data-uz="Ismingiz">Ваше имя</label><input id="fName" name="name" autocomplete="name" placeholder="Alisher" maxlength="40" required></div>
+        <div class="fld"><label for="fPhone" data-uz="Telefon">Телефон</label><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required></div>
+        <div class="fld full"><label for="fCar" data-uz="Avtomobilingiz">Ваш автомобиль</label><input id="fCar" name="car" autocomplete="off" placeholder="Chevrolet Cobalt, 2021" maxlength="60" required>
+          <div class="carq" role="group" aria-label="Автомобиль"><button type="button">Cobalt</button><button type="button">Gentra</button><button type="button">Nexia 3</button><button type="button">Malibu</button><button type="button">Onix</button><button type="button" data-uz="Boshqa">Другая</button></div>
         </div>
-        <div class="fld full"><span class="fl2" id="stl" data-ru="Вы сейчас">Siz hozir</span>
+        <div class="fld full"><span class="fl2" id="stl" data-uz="Siz hozir">Вы сейчас</span>
           <div class="seg2" role="group" aria-labelledby="stl">
-            <button type="button" data-st="new" aria-pressed="true" data-ru="Новый водитель">Yangi haydovchi</button>
-            <button type="button" data-st="move" aria-pressed="false" data-ru="Из другого парка">Boshqa parkdan</button>
+            <button type="button" data-st="new" aria-pressed="true" data-uz="Yangi haydovchi">Новый водитель</button>
+            <button type="button" data-st="move" aria-pressed="false" data-uz="Boshqa parkdan">Из другого парка</button>
           </div>
         </div>
-        <label class="chk"><input type="checkbox" id="fBaraka" checked><span data-ru="Участвую в акции <b>«Барака»</b>">«<b>Baraka</b>» aksiyasida qatnashaman</span></label>
+        <label class="chk"><input type="checkbox" id="fBaraka" checked><span data-uz="«<b>Baraka</b>» aksiyasida qatnashaman">Участвую в акции <b>«Барака»</b></span></label>
         <span class="ferr" id="fErr" role="status"></span>
-        <button class="send" type="submit"><span data-ru="Отправить заявку">Ariza yuborish</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></button>
-        <span class="fnote" data-ru="Нажимая кнопку, вы соглашаетесь, чтобы менеджер Royal GO связался с вами.">Tugmani bosib, Royal GO menejeri siz bilan bog‘lanishiga rozilik bildirasiz.</span>
+        <button class="send" type="submit"><span data-uz="Ariza yuborish">Отправить заявку</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></button>
+        <span class="fnote" data-uz="Tugmani bosib, Royal GO menejeri siz bilan bog‘lanishiga rozilik bildirasiz.">Нажимая кнопку, вы соглашаетесь, чтобы менеджер Royal GO связался с вами.</span>
       </div>
-      <div class="ok" role="status"><b data-ru="Заявка принята!">Ariza qabul qilindi!</b><span data-ru="Мы скоро свяжемся с вами.">Tez orada siz bilan bog‘lanamiz.</span></div>
+      <div class="ok" role="status"><b data-uz="Ariza qabul qilindi!">Заявка принята!</b><span data-uz="Tez orada siz bilan bog‘lanamiz.">Мы скоро свяжемся с вами.</span></div>
     </form>
     <div class="side rv" style="--d:1">
       <a class="pcard" href="tel:+998781138183">
-        <span class="lab" data-ru="Или позвоните">Yoki qo‘ng‘iroq qiling</span>
+        <span class="lab" data-uz="Yoki qo‘ng‘iroq qiling">Или позвоните</span>
         <span class="phone">78 113 81 83</span>
-        <span class="pc-row"><span data-ru="Нажмите, чтобы позвонить">Qo‘ng‘iroq qilish uchun bosing</span><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i></span>
+        <span class="pc-row"><span data-uz="Qo‘ng‘iroq qilish uchun bosing">Нажмите, чтобы позвонить</span><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i></span>
       </a>
       <a class="tgbtn" href="https://t.me/wbtaxiroyal" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg>
-        <div><b data-ru="Наш Telegram-канал">Telegram kanalimiz</b><span data-ru="Новости и розыгрыши «Барака»">Yangiliklar va «Baraka» natijalari</span></div>
+        <div><b data-uz="Telegram kanalimiz">Наш Telegram-канал</b><span data-uz="Yangiliklar va «Baraka» natijalari">Новости и розыгрыши «Барака»</span></div>
       </a>
-       <p class="hint" data-ru="Подпишитесь — и узнайте все новости, а также итоги акций «Барака» первыми.">Obuna bo‘ling — barcha yangiliklar va «Baraka» aksiyasi natijalarini birinchilardan bo‘lib biling.</p>
+       <p class="hint" data-uz="Obuna bo‘ling — barcha yangiliklar va «Baraka» aksiyasi natijalarini birinchilardan bo‘lib biling.">Подпишитесь — и узнайте все новости, а также итоги акций «Барака» первыми.</p>
     </div>
   </div>
 </section>
@@ -1533,9 +1925,9 @@ h1 .l{max-width:100%}
 
 <footer>
   <div class="wrap">
-    <span class="fl"><img src="img/logo-ink.png" alt="Royal GO" width="589" height="85"><img src="img/wb-dark.png" alt="WB Taxi" width="433" height="120"></span>
+    <span class="fl"><img src="img/logo.png" alt="Royal GO" width="589" height="85" loading="lazy" decoding="async"><img src="img/wb-white.png" alt="WB Taxi" width="433" height="120" loading="lazy" decoding="async"></span>
     <span class="fsoc"><a href="https://t.me/wbtaxiroyal" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg></a><a href="https://www.instagram.com/wb_royal_go/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/profile.php?id=61593891787800" target="_blank" rel="noopener" aria-label="Facebook" data-fb><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6V21H14v-9.3h2.6l.4-3.2H14Z"/></svg></a></span>
-    <span data-ru="© 2026 Royal GO · официальный партнёр WB Taxi">© 2026 Royal GO · WB Taxi rasmiy hamkori</span>
+    <span data-uz="© 2026 Royal GO · WB Taxi rasmiy hamkori">© 2026 Royal GO · официальный партнёр WB Taxi</span>
   </div>
 </footer>
 
@@ -1543,14 +1935,28 @@ h1 .l{max-width:100%}
 <div class="locm" id="locm" hidden>
   <div class="locm-bg" data-close></div>
   <div class="locm-card" role="dialog" aria-modal="true" aria-labelledby="locm-t">
-    <button type="button" class="locm-x" data-close aria-label="Yopish">✕</button>
-    <div class="locm-p" data-p="fuel"><h3 id="locm-t" data-ru="Сертификат на бензин">Benzin sertifikati</h3><p class="lsub" data-ru="Astoria Oil · Через какой навигатор открыть?">Astoria Oil · Qaysi navigator orqali ochamiz?</p><ul><li class="lrow"><div class="la"><b data-ru="Astoria Oil">Astoria Oil</b><span data-ru="ул. Обихаёт, 40/1, Сергелийский район">Obihayot ko‘chasi, 40/1, Sergeli tumani</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.219865,69.243218&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.219865,69.243218" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.243218,41.219865" target="_blank" rel="noopener">2GIS</a></div></li></ul></div>
-    <div class="locm-p" data-p="wash"><h3 data-ru="Карта автомойки">Avtomoyka kartasi</h3><p class="lsub" data-ru="Moyka DS · Выберите удобный вам филиал">Moyka DS · Sizga qulay filialni tanlang</p><ul><li class="lrow"><div class="la"><b data-ru="Moyka DS — Каракамыш">Moyka DS — Qoraqamish</b><span data-ru="Каракамыш 2/1-й квартал, Алмазарский район">Qoraqamish 2/1-mavze, Olmazor tumani</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.357094,69.220979&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.357094,69.220979" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.220979,41.357094" target="_blank" rel="noopener">2GIS</a></div></li><li class="lrow"><div class="la"><b data-ru="Moyka DS — Большая кольцевая">Moyka DS — Katta halqa yo‘li</b><span data-ru="Большая кольцевая дорога, 7/1, Казахаул, Сергелийский район">Katta halqa yo‘li, 7/1, Qozoqovul, Sergeli tumani</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.240288,69.318235&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.240288,69.318235" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.318235,41.240288" target="_blank" rel="noopener">2GIS</a></div></li><li class="lrow"><div class="la"><b data-ru="Moyka DS — Учтепа">Moyka DS — Uchtepa</b><span data-ru="Учтепинский район">Uchtepa tumani</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.272676,69.180341&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.272676,69.180341" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.180341,41.272676" target="_blank" rel="noopener">2GIS</a></div></li><li class="lrow"><div class="la"><b data-ru="Moyka DS — Сергели-7">Moyka DS — Sergeli-7</b><span data-ru="Массив Сергели-7, 4/1, Сергелийский район">Sergeli-7 massivi, 4/1, Sergeli tumani</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.222579,69.209939&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.222579,69.209939" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.209939,41.222579" target="_blank" rel="noopener">2GIS</a></div></li></ul></div>
-        <div class="locm-p" data-p="money"><h3 data-ru="Денежный приз — 1 000 000 сум">Pul mukofoti — 1 000 000 so‘m</h3><p class="lnote" data-ru="Приз вручается на <b>церемонии награждения</b>, которая проходит <b>каждые 10 дней</b>.">Mukofot <b>har 10 kunda</b> o‘tkaziladigan <b>taqdirlash marosimida</b> topshiriladi.</p><p class="lsec" data-ru="Церемония проходит в нашем офисе">Marosim bizning ofisda o‘tadi</p><ul><li class="lrow"><div class="la"><b>Royal GO</b><span data-ru="г. Ташкент, Алмазарский район, улица Лангар, 76А">Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.327968,69.227402&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.327968,69.227402" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.227402,41.327968" target="_blank" rel="noopener">2GIS</a></div></li></ul></div>
-    <div class="locm-p" data-p="office"><h3 data-ru="Наш офис">Bizning ofis</h3><p class="lsub" data-ru="Через какой навигатор открыть?">Qaysi navigator orqali ochamiz?</p><ul><li class="lrow"><div class="la"><b>Royal GO</b><span data-ru="г. Ташкент, Алмазарский район, улица Лангар, 76А">Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.327968,69.227402&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.327968,69.227402" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.227402,41.327968" target="_blank" rel="noopener">2GIS</a></div></li></ul></div>
+    <button type="button" class="locm-x" data-close aria-label="Закрыть">✕</button>
+    <div class="locm-p" data-p="fuel"><h3 id="locm-t" data-uz="Benzin sertifikati">Сертификат на бензин</h3><p class="lsub" data-uz="Astoria Oil · Qaysi navigator orqali ochamiz?">Astoria Oil · Через какой навигатор открыть?</p><ul><li class="lrow"><div class="la"><b data-uz="Astoria Oil">Astoria Oil</b><span data-uz="Obihayot ko‘chasi, 40/1, Sergeli tumani">ул. Обихаёт, 40/1, Сергелийский район</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.219865,69.243218&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.219865,69.243218" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.243218,41.219865" target="_blank" rel="noopener">2GIS</a></div></li></ul></div>
+        <div class="locm-p" data-p="partner" hidden><h3 data-uz="WB Taxi rasmiy hamkori">Официальный партнёр WB Taxi</h3><p class="lsub" data-uz="Royal GO — WB Taxi’ning O‘zbekistondagi ilk rasmiy hamkorlaridan biri.">Royal GO — один из первых официальных партнёров WB Taxi в Узбекистане.</p><ul class="ilist"><li data-uz="Haydovchilarni WB Taxi’ga rasmiy va tez ulaymiz">Подключаем водителей к WB Taxi официально и быстро</li><li data-uz="Bizga 5 000 dan ortiq haydovchi ishonadi">Нам доверяют более 5 000 водителей</li><li data-uz="Haydovchilarimiz barcha bonus va aksiyalarda qatnashadi">Наши водители участвуют во всех бонусах и акциях</li></ul></div>
+        <div class="locm-p" data-p="pay" hidden><h3 data-uz="Tezkor to‘lovlar">Моментальные выплаты</h3><p class="lsub" data-uz="Ishlagan pulingizni bot orqali istalgan vaqtda yechib olasiz.">Выводите заработок через бот в любое время.</p><ol class="ilist num"><li data-uz="Telegram-botimizga kiring">Откройте наш Telegram-бот</li><li data-uz="Yechib olinadigan summani kiriting">Укажите сумму для вывода</li><li data-uz="Pul kartangizga tushadi">Деньги придут на вашу карту</li></ol><p class="lnote" data-uz="Navbatlarsiz va ofisga bormasdan.">Без очередей и поездок в офис.</p></div>
+        <div class="locm-p" data-p="support" hidden><h3 data-uz="Texnik yordam">Техническая поддержка</h3><p class="lsub" data-uz="Ilova va ish bo‘yicha har qanday savolda yordam beramiz.">Поможем с приложением и любыми вопросами по работе.</p><div class="sup-btns"><a class="sup-b" href="tel:+998781138183"><span data-uz="Qo‘ng‘iroq qilish">Позвонить</span><b>78 113 81 83</b></a><a class="sup-b tg" href="https://t.me/Royal_taxWB" target="_blank" rel="noopener"><span data-uz="Telegram’da yozish">Написать в Telegram</span><b>@Royal_taxWB</b></a></div></div>
+        <div class="locm-p" data-p="v1" hidden><h3>1&nbsp;200&nbsp;000 so‘m</h3><p class="lsub" data-uz="TOP-20 reytingida 1-o‘rin uchun">За 1 место в рейтинге TOP-20</p><div class="vbal"><b data-uz="Balansingizga tushirib beramiz">Отправим вам на баланс</b><span data-uz="1&amp;nbsp;200&amp;nbsp;000 so‘m to‘g‘ridan-to‘g‘ri WB Taxi balansingizga o‘tkaziladi + 40 litr benzin sertifikati.">1&nbsp;200&nbsp;000 сум зачисляем прямо на ваш баланс в WB Taxi + сертификат на 40 л бензина.</span></div><p class="lnote" data-uz="Natijalar <b>har 10 kunda</b> bajarilgan buyurtmalar soni bo‘yicha aniqlanadi.">Итоги подводятся <b>каждые 10 дней</b> по количеству выполненных заказов.</p><button type="button" class="vmore" data-loc="money" data-uz="Barcha mukofotlar: 1–20-o‘rin →">Все призы 1–20 мест →</button></div>
+        <div class="locm-p" data-p="v2" hidden><h3>600&nbsp;000 so‘m</h3><p class="lsub" data-uz="TOP-20 reytingida 2- va 3-o‘rinlar uchun">За 2 и 3 места в рейтинге TOP-20</p><div class="vbal"><b data-uz="Balansingizga tushirib beramiz">Отправим вам на баланс</b><span data-uz="600&amp;nbsp;000 so‘m to‘g‘ridan-to‘g‘ri WB Taxi balansingizga o‘tkaziladi + 40 yoki 25 litr benzin sertifikati.">600&nbsp;000 сум зачисляем прямо на ваш баланс в WB Taxi + сертификат на 40 или 25 л бензина.</span></div><p class="lnote" data-uz="Natijalar <b>har 10 kunda</b> bajarilgan buyurtmalar soni bo‘yicha aniqlanadi.">Итоги подводятся <b>каждые 10 дней</b> по количеству выполненных заказов.</p><button type="button" class="vmore" data-loc="money" data-uz="Barcha mukofotlar: 1–20-o‘rin →">Все призы 1–20 мест →</button></div>
+        <div class="locm-p" data-p="money"><h3 data-uz="Baraka mukofotlari">Призы «Барака»</h3><p class="lsub" data-uz="Har 10 kunda · eng ko‘p buyurtma bajargan 20 nafar haydovchi">Каждые 10 дней · 20 победителей по числу заказов</p><ul class="mlist"><li><b data-uz="1-o‘rin">1 место</b><span data-uz="1 200 000 so‘m + 40 litr benzin">1 200 000 сум + 40 л бензина</span></li><li><b data-uz="2-o‘rin">2 место</b><span data-uz="600 000 so‘m + 40 litr benzin">600 000 сум + 40 л бензина</span></li><li><b data-uz="3-o‘rin">3 место</b><span data-uz="600 000 so‘m + 25 litr benzin">600 000 сум + 25 л бензина</span></li><li><b data-uz="4–10-o‘rin">4–10 места</b><span data-uz="40 litr benzin · Astoria Oil sertifikati">Сертификат Astoria Oil на 40 л бензина</span></li><li><b data-uz="11–20-o‘rin">11–20 места</b><span data-uz="25 litr benzin · Astoria Oil sertifikati">Сертификат Astoria Oil на 25 л бензина</span></li></ul><p class="lnote" data-uz="Mukofot <b>har 10 kunda</b> o‘tkaziladigan <b>taqdirlash marosimida</b> topshiriladi.">Приз вручается на <b>церемонии награждения</b>, которая проходит <b>каждые 10 дней</b>.</p><p class="lsec" data-uz="Marosim bizning ofisda o‘tadi">Церемония проходит в нашем офисе</p><ul><li class="lrow"><div class="la"><b>Royal GO</b><span data-uz="Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A">г. Ташкент, Алмазарский район, улица Лангар, 76А</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.327968,69.227402&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.327968,69.227402" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.227402,41.327968" target="_blank" rel="noopener">2GIS</a></div></li></ul></div>
+    <div class="locm-p" data-p="office"><h3 data-uz="Bizning ofis">Наш офис</h3><p class="lsub" data-uz="Qaysi navigator orqali ochamiz?">Через какой навигатор открыть?</p><ul><li class="lrow"><div class="la"><b>Royal GO</b><span data-uz="Toshkent sh., Olmazor tumani, Langar ko‘chasi, 76A">г. Ташкент, Алмазарский район, улица Лангар, 76А</span></div><div class="lnav"><a href="https://yandex.uz/maps/?rtext=~41.327968,69.227402&amp;rtt=auto" target="_blank" rel="noopener">Yandex</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.327968,69.227402" target="_blank" rel="noopener">Google</a><a href="https://2gis.uz/tashkent/directions/points/%7C69.227402,41.327968" target="_blank" rel="noopener">2GIS</a></div></li></ul></div>
   </div>
 </div>
-<a class="chat" id="chat" href="https://t.me/Royal_taxWB" target="_blank" rel="noopener" aria-label="Telegram — menejer"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg><span class="dot"></span></i><span class="tx" data-ru="Онлайн-чат">Onlayn chat</span></a>
+<div class="la" id="langAsk" role="dialog" aria-labelledby="laT" hidden>
+  <button type="button" class="la-x" aria-label="Закрыть — русский язык">×</button>
+  <p class="la-t" id="laT">На каком языке вам удобнее?</p>
+  <p class="la-s" lang="uz">Sizga qaysi tilda qulay?</p>
+  <div class="la-b">
+    <button type="button" class="on" data-pick="ru" lang="ru">Русский</button>
+    <button type="button" data-pick="uz" lang="uz">O‘zbekcha</button>
+    <button type="button" data-pick="kr" lang="uz-Cyrl">Ўзбекча</button>
+  </div>
+</div>
+<a class="chat" id="chat" href="https://t.me/Royal_taxWB" target="_blank" rel="noopener" aria-label="Telegram — менеджер"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg><span class="dot"></span></i><span class="tx" data-uz="Onlayn chat">Онлайн-чат</span></a>
 
 <script>
 (function(){
@@ -1595,12 +2001,26 @@ h1 .l{max-width:100%}
   function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')}
   document.querySelectorAll('.count').forEach(function(el){
     var to=+el.dataset.to; if(reduce||!io){el.textContent=fmt(to);return}
-    el.textContent='0';
-    var o=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;o.disconnect();
-      var t0=performance.now(),d=1600;
-      (function f(t){var k=Math.min(1,(t-t0)/d),e=1-Math.pow(2,-10*k);el.textContent=fmt(Math.round(to*(k===1?1:e)/1000)*1000);if(k<1)requestAnimationFrame(f)})(t0);
-    },{threshold:.4});o.observe(el);
+    el.textContent='0'; var raf=0,vis=false;
+    function run(){cancelAnimationFrame(raf);var t0=performance.now(),d=1600;
+      (function f(t){var k=Math.min(1,(t-t0)/d),e=1-Math.pow(2,-10*k);el.textContent=fmt(Math.round(to*(k===1?1:e)/1000)*1000);if(k<1)raf=requestAnimationFrame(f)})(t0)}
+    new IntersectionObserver(function(es){var en=es[0];
+      if(en.isIntersecting&&en.intersectionRatio>=.4){if(!vis){vis=true;run()}}
+      else if(!en.isIntersecting){vis=false;cancelAnimationFrame(raf);el.textContent='0'}
+    },{threshold:[0,.4]}).observe(el);
+    document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&vis)run()});
   });
+
+  // Baraka scene: replay entrance + phone rows every time it comes back into view
+  (function(){
+    var st=document.querySelector('#baraka .gstage');if(!st||reduce||!('IntersectionObserver' in window))return;var vis=false;
+    function replay(){st.classList.remove('on');void st.offsetWidth;st.classList.add('on')}
+    new IntersectionObserver(function(es){var en=es[0];
+      if(en.isIntersecting&&en.intersectionRatio>=.15){if(!vis){vis=true;replay()}}
+      else if(!en.isIntersecting){vis=false;st.classList.remove('on')}
+    },{threshold:[0,.15]}).observe(st);
+    document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&vis)replay()});
+  })();
 
   // lead form -> CRM
   // CRM_ENDPOINT: сюда вставляется адрес вебхука CRM (amoCRM / Bitrix24 / Telegram-бот).
@@ -1614,7 +2034,7 @@ h1 .l{max-width:100%}
     var car=document.getElementById('fCar');
     form.querySelectorAll('.carq button').forEach(function(b){b.addEventListener('click',function(){
       form.querySelectorAll('.carq button').forEach(function(x){x.classList.toggle('on',x===b)});
-      if(b.hasAttribute('data-ru')){car.value='';car.focus()} else {car.value='Chevrolet '+b.textContent+', ';car.focus()}
+      if(b.hasAttribute('data-uz')){car.value='';car.focus()} else {car.value='Chevrolet '+b.textContent+', ';car.focus()}
     })});
     var ph=document.getElementById('fPhone');
     ph.addEventListener('focus',function(){if(!ph.value)ph.value='+998 '});
@@ -1626,12 +2046,20 @@ h1 .l{max-width:100%}
       if(digits.length<9){err.textContent=ru?'Введите номер полностью':'Raqamni to‘liq yozing';ph.focus();return}
       if(car.value.trim().length<2){err.textContent=ru?'Укажите автомобиль':'Avtomobilingizni yozing';car.focus();return}
       err.textContent='';
-      var data={name:name,phone:phone,car:car.value.trim(),status:st==='new'?'Yangi haydovchi':'Boshqa parkdan',baraka:document.getElementById('fBaraka').checked,lang:ru?'ru':'uz',page:location.href,ts:new Date().toISOString()};
-      function done(){form.classList.add('done')}
+      var data={name:name,phone:phone,car:car.value.trim(),status:st==='new'?'Yangi haydovchi':'Boshqa parkdan',baraka:document.getElementById('fBaraka').checked,lang:document.documentElement.lang,page:location.href,ts:new Date().toISOString()};
+      var src='';try{src=new URLSearchParams(location.search).get('utm_source')||sessionStorage.getItem('rg-src')||''}catch(_){}
+      data.source=src||'direct';
+      var tracked=false;
+      function done(){
+        form.classList.add('done');
+        if(tracked)return;tracked=true;
+        try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'lead_submit',lead_source:src||'direct'})}catch(_){}
+        try{if(typeof gtag==='function')gtag('event','generate_lead',{lead_source:src||'direct',form_language:data.lang,driver_status:st})}catch(_){}
+      }
       if(CRM_ENDPOINT){
         fetch(CRM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
       } else {
-        var msg='Ariza / Заявка\nIsm: '+data.name+'\nTel: '+data.phone+'\nAvto: '+data.car+'\n'+data.status+'\nBaraka: '+(data.baraka?'ha':'yo‘q');
+        var msg='Ariza / Заявка\nIsm: '+data.name+'\nTel: '+data.phone+'\nAvto: '+data.car+'\n'+data.status+'\nBaraka: '+(data.baraka?'ha':'yo‘q')+(src?'\nManba / Источник: '+src:'');
         window.open('https://t.me/Royal_taxWB?text='+encodeURIComponent(msg),'_blank','noopener');
         done();
       }
@@ -1735,7 +2163,8 @@ h1 .l{max-width:100%}
 
   // floating chat
   var chat=document.getElementById('chat');
-  function chk(){chat.classList.toggle('show',window.scrollY>window.innerHeight*.6)}
+  function chk(){var top=window.scrollY<=window.innerHeight*.6;chat.classList.toggle('show',window.innerWidth>820||!top);chat.classList.toggle('hi',window.innerWidth>820&&top)}
+  window.addEventListener('resize',chk);
   window.addEventListener('scroll',chk,{passive:true});chk();
 
   // language
@@ -1768,19 +2197,35 @@ h1 .l{max-width:100%}
     }).join('');
   }
   function trHTML(h){return h.split(/(<[^>]+>)/).map(function(p){return p.charAt(0)==='<'?p:trText(p)}).join('')}
-  var nodes=document.querySelectorAll('[data-ru]');
-  nodes.forEach(function(n){n.dataset.uz=n.innerHTML;n.dataset.kr=trHTML(n.innerHTML)});
+  var nodes=document.querySelectorAll('[data-uz]');
+  nodes.forEach(function(n){n.dataset.ru=n.innerHTML;n.dataset.kr=trHTML(n.dataset.uz)});
   window.__tr=trText;
-  function setLang(l){
-    nodes.forEach(function(n){n.innerHTML=n.dataset[l]});
+  var TITLES={ru:document.title,uz:'Royal GO — WB Taxi’da haydovchi bo‘lib ishlang, Toshkent'};
+  var mdesc=document.querySelector('meta[name="description"]');
+  var DESCS={ru:mdesc?mdesc.content:'',uz:'Royal GO — WB Taxi’ning O‘zbekistondagi ilk rasmiy hamkorlaridan biri. WB Taxi’ga tez ulaymiz: ulanish bonusi 50 000 so‘m, «Baraka» aksiyasi sovrinlari, tezkor to‘lovlar va texnik yordam.'};
+  TITLES.kr=trText(TITLES.uz);DESCS.kr=trText(DESCS.uz);
+  var cur='ru';
+  function setLang(l,remember){
+    if(!/^(ru|uz|kr)$/.test(l))l='ru';
+    if(l!==cur){nodes.forEach(function(n){n.innerHTML=n.dataset[l]});cur=l}
     document.documentElement.lang=l==='kr'?'uz-Cyrl':l;
+    document.title=TITLES[l]; if(mdesc)mdesc.content=DESCS[l];
     document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l)});
-    try{localStorage.setItem('rg-lang',l)}catch(_){}
+    if(remember){try{localStorage.setItem('rg-lang-choice',l)}catch(_){}}
   }
-  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
-  var saved=null;try{saved=localStorage.getItem('rg-lang')}catch(_){}
-  if(!saved){try{if((navigator.language||'').toLowerCase().indexOf('ru')===0)saved='ru'}catch(_){}}
-  if(saved==='ru'||saved==='kr')setLang(saved);
+  window.__rgSetLang=setLang;
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang,true);hideAsk()})});
+  setLang(window.__rgLang||'ru',false);
+  document.documentElement.classList.remove('i18n-wait');
+
+  // first visit: ask which language is comfortable (only without ?lang= and without a saved choice)
+  var ask=document.getElementById('langAsk');
+  function hideAsk(){if(!ask||ask.hidden)return;ask.classList.remove('in');setTimeout(function(){ask.hidden=true},reduce?0:380)}
+  if(ask){
+    ask.querySelectorAll('[data-pick]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.pick,true);hideAsk()})});
+    ask.querySelector('.la-x').addEventListener('click',function(){setLang('ru',true);hideAsk()});
+    if(window.__rgAsk){setTimeout(function(){ask.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){ask.classList.add('in')})})},700)}
+  }
 })();
 </script>
 </body>
