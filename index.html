@@ -2,10 +2,12 @@
 <html lang="ru" class="js">
 <head>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PHCLC3XB"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18590474207"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'AW-18590474207');
   dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
 </script>
 <script>
@@ -1682,6 +1684,27 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,
 .gstage.rv.on .r3-base{animation:pIn .9s cubic-bezier(.22,.9,.24,1) both,fS 4.6s ease-in-out 1.4s infinite}
 @keyframes pIn{from{opacity:0;scale:.92}to{opacity:1;scale:1}}
 @media (prefers-reduced-motion:reduce){#baraka .gstage.ld:not(.ready) .r3d::before{animation:none}.gstage.rv .r3-base{animation:none!important;opacity:1!important}}
+/* ===== v64: hero location chip — Tashkent ===== */
+.hloc{display:inline-flex;align-items:center;gap:7px;margin:0 0 16px;padding:6px 15px 6px 10px;border-radius:999px;font-size:14.5px;font-weight:600;line-height:1.2;color:#fff;
+  background:linear-gradient(160deg,rgba(255,255,255,.15),rgba(255,255,255,.04));box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 0 0 1px rgba(170,130,255,.42),0 8px 22px -12px rgba(123,44,255,.8);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4)}
+.hloc svg{width:15px;height:15px;flex:none;color:#D7B4FF}
+@media (min-width:821px){.hloc{font-size:16px;padding:7px 18px 7px 12px;gap:8px;margin-bottom:18px}.hloc svg{width:17px;height:17px}}
+@media (max-width:820px){.hloc{font-size:13px;margin:0 0 12px;padding:5px 12px 5px 8px;gap:6px}.hloc svg{width:14px;height:14px}}
+@media (prefers-reduced-transparency:reduce){.hloc{-webkit-backdrop-filter:none;backdrop-filter:none;background:#2A2338}}
+/* ===== v65: mobile — chip + headline centered, chip text a touch smaller ===== */
+@media (max-width:820px){
+  .hero .top .hloc{display:flex;width:max-content;max-width:100%;margin-left:auto;margin-right:auto;font-size:12px}
+  .hero .top .hloc svg{width:13px;height:13px}
+  .hero h1{text-align:center}
+  .hero h1 .l:nth-child(2){max-width:none}
+}
+/* ===== v66: mobile — chip a bit lower, tighter gaps between chip and headline lines ===== */
+@media (max-width:820px){
+  .hero .top .hloc{margin-top:10px;margin-bottom:6px}
+  .hero h1 .l:nth-child(2){display:flex;justify-content:center;margin-top:-.36em}
+  .hero h1 .l>span.hl-glass{margin-top:.16em!important}
+}
 </style>
 </head>
 <body>
@@ -1711,6 +1734,7 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,
 <section class="hero">
   <div class="top wrap">
     <span class="hsoc"><a href="https://t.me/wbtaxiroyal" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.6.8 1.1.3l2.7-2.5 5 3.7c.9.5 1.6.2 1.8-.9l3.2-15.1c.3-1.4-.5-2-1.6-1.4ZM9.6 14.2l8.3-7.6c.4-.3-.1-.5-.6-.2L7.8 13l.5 4.6Z"/></svg></a><a href="https://www.instagram.com/wb_royal_go/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/profile.php?id=61593891787800" target="_blank" rel="noopener" aria-label="Facebook" data-fb><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6V21H14v-9.3h2.6l.4-3.2H14Z"/></svg></a></span>
+    <p class="hloc fade"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-4.1 0-7.4 3.2-7.4 7.3 0 5.3 6.3 11.4 6.6 11.7.4.4 1.1.4 1.5 0 .3-.3 6.7-6.4 6.7-11.7 0-4.1-3.3-7.3-7.4-7.3Zm0 10.2a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8Z"/></svg><span data-i="154">Работа водителем в Ташкенте</span></p>
     <h1>
       <span class="l"><span style="--i:0" class="h1a" data-i="5">Зарабатывайте в WB Taxi</span></span>
       <span class="l"><span style="--i:1" class="hl-glass"><span class="soft" data-i="6">вместе с нами</span></span></span>
@@ -2102,6 +2126,8 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,
         if(tracked)return;tracked=true;
         try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'lead_submit',lead_source:src||'direct'})}catch(_){}
         try{if(typeof gtag==='function')gtag('event','generate_lead',{lead_source:src||'direct',form_language:data.lang,driver_status:st})}catch(_){}
+        // Google Ads conversion: «Заявка с сайта»
+        try{if(typeof gtag==='function')gtag('event','conversion',{send_to:'AW-18590474207/ijjCCIzN7L0dEN-_0KBF'})}catch(_){}
       }
       if(CRM_ENDPOINT){
         fetch(CRM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
