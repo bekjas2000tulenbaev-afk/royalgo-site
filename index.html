@@ -35,6 +35,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <title>Royal GO — работа водителем в WB Taxi в Ташкенте</title>
+<link rel="canonical" href="https://royalgo.uz/">
 <meta name="description" content="Royal GO — один из первых официальных партнёров WB Taxi в Узбекистане. Подключим к WB Taxi быстро: бонус 50 000 сум за подключение, призы акции «Барака», быстрые выплаты и техподдержка. Офис в Ташкенте.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1942,6 +1943,7 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,
           </div>
         </div>
         <label class="chk"><input type="checkbox" id="fBaraka" checked><span data-i="93">Участвую в акции <b>«Барака»</b></span></label>
+        <input type="text" id="fSite" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
         <span class="ferr" id="fErr" role="status"></span>
         <button class="send" type="submit"><span data-i="94">Отправить заявку</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5"/></svg></button>
         <span class="fnote" data-i="95">Нажимая кнопку, вы соглашаетесь, чтобы менеджер Royal GO связался с вами.</span>
@@ -2075,8 +2077,8 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,
   })();
 
   // lead form -> CRM
-  // CRM_ENDPOINT: сюда вставляется адрес вебхука CRM (amoCRM / Bitrix24 / Telegram-бот).
-  var CRM_ENDPOINT='';
+  // Заявки уходят в CRM (crm.auto-register.uz). Если CRM не ответила — водителю предлагается Telegram.
+  var CRM_ENDPOINT='https://crm.auto-register.uz/api/landing-lead';
   var form=document.getElementById('leadForm');
   if(form){
     var st='new';
@@ -2113,7 +2115,9 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,
       var ru=document.documentElement.lang==='ru', err=document.getElementById('fErr');
       var name=document.getElementById('fName').value.trim(), phone=ph.value.trim(), digits=phone.replace(/\D/g,'');
       if(name.length<2){err.textContent=ru?'Введите имя':'Ismingizni yozing';document.getElementById('fName').focus();return}
-      if(digits.length<9){err.textContent=ru?'Введите номер полностью':'Raqamni to‘liq yozing';ph.focus();return}
+      // CRM принимает только полный узбекский номер: +998 и 9 цифр
+      var uz=digits.length===12&&digits.slice(0,3)==='998'?'+'+digits:(digits.length===9?'+998'+digits:(digits.length===10&&digits.charAt(0)==='8'?'+998'+digits.slice(1):''));
+      if(!uz){err.textContent=L('Введите номер полностью: +998 90 123 45 67','Raqamni to‘liq yozing: +998 90 123 45 67');ph.focus();return}
       if(car.value.trim().length<2){err.textContent=ru?'Укажите автомобиль':'Avtomobilingizni yozing';car.focus();return}
       if(carMsg(true)){err.textContent=carX.textContent;car.focus();try{var n=car.value.length;car.setSelectionRange(n,n)}catch(_){}return}
       err.textContent='';
@@ -2129,11 +2133,26 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.1)!important;color:rgba(255,
         // Google Ads conversion: «Заявка с сайта»
         try{if(typeof gtag==='function')gtag('event','conversion',{send_to:'AW-18590474207/ijjCCIzN7L0dEN-_0KBF'})}catch(_){}
       }
+      var tgMsg='Ariza / Заявка\nIsm: '+data.name+'\nTel: '+data.phone+'\nAvto: '+data.car+'\n'+data.status+'\nBaraka: '+(data.baraka?'ha':'yo‘q')+(src?'\nManba / Источник: '+src:'');
       if(CRM_ENDPOINT){
-        fetch(CRM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+        if(form.dataset.sending==='1')return;
+        var lng=data.lang==='ru'?'ru':(data.lang==='uz-Cyrl'?'kr':'uz');
+        var pg=location.href;if(src&&!/[?&]utm_source=/.test(pg))pg+=(pg.indexOf('?')<0?'?':'&')+'utm_source='+encodeURIComponent(src);
+        var hp=document.getElementById('fSite');
+        var crm={name:data.name,phone:uz,car:data.car,status:st==='move'?'move':'new',baraka:data.baraka,lang:lng,website:hp?hp.value:'',page:pg,ts:data.ts};
+        var btn=form.querySelector('.send');
+        function fail(){
+          form.dataset.sending='0';if(btn)btn.disabled=false;
+          err.textContent=L('Заявка не ушла. Попробуйте ещё раз или напишите нам в ','Ariza yuborilmadi. Yana urinib ko‘ring yoki yozing: ');
+          var a=document.createElement('a');a.href='https://t.me/Royal_taxWB?text='+encodeURIComponent(tgMsg);a.target='_blank';a.rel='noopener';a.textContent='Telegram';a.style.cssText='color:inherit;text-decoration:underline';
+          err.appendChild(a);
+        }
+        form.dataset.sending='1';if(btn)btn.disabled=true;
+        var opt={method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(crm)};
+        try{if(typeof AbortSignal!=='undefined'&&AbortSignal.timeout)opt.signal=AbortSignal.timeout(15000)}catch(_){}
+        fetch(CRM_ENDPOINT,opt).then(function(r){if(r&&r.ok){form.dataset.sending='0';done()}else fail()}).catch(fail);
       } else {
-        var msg='Ariza / Заявка\nIsm: '+data.name+'\nTel: '+data.phone+'\nAvto: '+data.car+'\n'+data.status+'\nBaraka: '+(data.baraka?'ha':'yo‘q')+(src?'\nManba / Источник: '+src:'');
-        window.open('https://t.me/Royal_taxWB?text='+encodeURIComponent(msg),'_blank','noopener');
+        window.open('https://t.me/Royal_taxWB?text='+encodeURIComponent(tgMsg),'_blank','noopener');
         done();
       }
     });
